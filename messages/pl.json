@@ -1,0 +1,123 @@
+{
+  "common": {
+    "brandName": "VistulaVogue",
+    "learnMore": "Dowiedz się więcej",
+    "shopNow": "Kup teraz",
+    "viewAll": "Zobacz wszystkie",
+    "limitedStock": "Ograniczona ilość",
+    "leftInStock": "szt. w magazynie",
+    "freeDelivery": "Darmowa dostawa",
+    "comingSoon": "Wkrótce dostępne"
+  },
+  "header": {
+    "search": "Szukaj produktów...",
+    "cart": "Koszyk",
+    "welcome": "Cześć, {name}",
+    "logout": "Wyloguj się"
+  },
+  "switcher": {
+    "language": "Język",
+    "currency": "Waluta"
+  },
+  "hero": {
+    "disclosureHint": "Stuknij, aby zobaczyć więcej szczegółów oferty"
+  },
+  "trust": {
+    "inpost": "Dostawa do Paczkomatu InPost",
+    "blik": "Płatność BLIK",
+    "freeDelivery": "Darmowa dostawa od 199 zł"
+  },
+  "categories": {
+    "title": "Popularne kategorie",
+    "subtitle": "Najczęściej wybierane przez Polaków",
+    "comingSoonTitle": "Kategoria {category} już wkrótce!",
+    "comingSoonDesc": "Nasza wyjątkowa oferta w dziale {category} jest obecnie w przygotowaniu. Zapisz się poniżej na listę oczekujących, aby otrzymać wczesny dostęp i powiadomienie o starcie!",
+    "emailPlaceholder": "Wpisz swój adres e-mail...",
+    "notifyMe": "Powiadom mnie",
+    "notifyLoading": "Zapisywanie...",
+    "successTitle": "Jesteś na liście!",
+    "successDesc": "Dziękujemy! Wyślemy Ci wyjątkową ofertę powitalną, gdy tylko dział {category} zostanie uruchomiony.",
+    "closeBtn": "Rozumiem, dzięki!"
+  },
+  "promo": {
+    "title": "Oferta limitowana",
+    "endsIn": "Kończy się za",
+    "days": "dni",
+    "hours": "godz",
+    "minutes": "min",
+    "seconds": "sek"
+  },
+  "products": {
+    "featured": "Polecane produkty",
+    "recentPurchase": "Ktoś z {city} właśnie kupił {product}",
+    "goBack": "Wróć",
+    "relatedProducts": "Może Ci się spodobać"
+  },
+  "legal": {
+    "terms": "Regulamin",
+    "privacy": "Polityka Prywatności",
+    "termsTitle": "Regulamin sklepu",
+    "privacyTitle": "Polityka Prywatności",
+    "stubMessage": "Pełna treść dokumentu zostanie opublikowana wkrótce zgodnie z wymogami UOKiK."
+  },
+  "signup": {
+    "title": "Stwórz darmowe konto",
+    "subtitle": "Dołącz do ponad 10 000 zadowolonych klientów w Polsce",
+    "fullName": "Imię i nazwisko",
+    "email": "Adres e-mail",
+    "password": "Hasło",
+    "passwordHint": "Hasło musi spełniać poniższe kryteria:",
+    "reqLength": "Minimum 8 znaków",
+    "reqNumber": "Przynajmniej jedna cyfra",
+    "reqSpecial": "Przynajmniej jeden znak specjalny",
+    "termsAccept": "Akceptuję {terms} oraz {privacy}",
+    "marketingAccept": "Chcę otrzymywać informacje o promocjach i ofertach specjalnych (Marketing)",
+    "submit": "Utwórz konto",
+    "or": "Lub kontynuuj z",
+    "googleLogin": "Kontynuuj z Google",
+    "alreadyHaveAccount": "Masz już konto?",
+    "login": "Zaloguj się",
+    "socialProofTitle": "Dlaczego warto do nas dołączyć?",
+    "socialProof1": "Darmowa dostawa od 199 zł do Paczkomatów InPost",
+    "socialProof2": "Bezpieczne płatności BLIK i szybkie przelewy",
+    "socialProof3": "Bezproblemowy zwrot w ciągu 14 dni",
+    "socialProof4": "Dostęp do limitowanych promocji i wyprzedaży",
+    "trustBadge": "Bezpieczne zakupy certyfikowane SSL",
+    "successTitle": "Witaj w VistulaVogue!",
+    "successSubtitle": "Twoje konto zostało pomyślnie utworzone. Przygotowaliśmy dla Ciebie coś specjalnego!",
+    "successCta": "Przejdź do sklepu",
+      "alreadyExistsTitle": "Konto już istnieje",
+      "alreadyExistsSubtitle": "Użytkownik o tym adresie e-mail jest już zarejestrowany. Możesz utworzyć tylko jedno konto.",
+      "loginNow": "Zaloguj się na swoje konto",
+      "weakPasswordTitle": "Słabe hasło",
+      "weakPasswordSubtitle": "Hasło nie spełnia wymogów bezpieczeństwa.",
+      "genericErrorTitle": "Rejestracja nieudana",
+      "genericErrorSubtitle": "Wystąpił nieoczekiwany błąd. Spróbuj ponownie później."
+  },
+  "login": {
+    "title": "Witaj z powrotem",
+    "subtitle": "Zaloguj się na swoje konto VistulaVogue, aby kontynuować",
+    "email": "Adres e-mail",
+    "password": "Hasło",
+    "submit": "Zaloguj się",
+    "or": "Lub kontynuuj z",
+    "googleLogin": "Kontynuuj z Google",
+    "dontHaveAccount": "Nie masz jeszcze konta?",
+    "signup": "Zarejestruj się",
+    "emailNotFound": "Ten adres e-mail nie jest zarejestrowany. Zarejestruj się najpierw.",
+    "wrongPassword": "Wprowadzone hasło jest niepoprawne. Spróbuj ponownie.",
+    "emailNotFoundTitle": "Nie znaleziono e-maila",
+    "wrongPasswordTitle": "Błędne hasło",
+    "successTitle": "Witaj z powrotem!",
+    "successSubtitle": "Zalogowano pomyślnie. Zapraszamy na zakupy!",
+    "successCta": "Przejdź do sklepu",
+      "socialProofTitle": "Dlaczego warto u nas kupować?",
+      "socialProof1": "Darmowa dostawa od 199 zł do Paczkomatów InPost",
+      "socialProof2": "Bezpieczne płatności BLIK i szybkie przelewy",
+      "socialProof3": "Bezproblemowy zwrot w ciągu 14 dni",
+      "socialProof4": "Dostęp do limitowanych promocji i wyprzedaży",
+      "trustBadge": "Bezpieczne zakupy certyfikowane SSL",
+      "genericErrorTitle": "Coś poszło nie tak",
+      "genericError": "Wystąpił nieoczekiwany błąd. Sprawdź połączenie internetowe i spróbuj ponownie."
+  }
+}

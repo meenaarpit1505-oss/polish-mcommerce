@@ -1,0 +1,123 @@
+{
+  "common": {
+    "brandName": "VistulaVogue",
+    "learnMore": "Learn more",
+    "shopNow": "Shop now",
+    "viewAll": "View all",
+    "limitedStock": "Limited stock",
+    "leftInStock": "left in stock",
+    "freeDelivery": "Free delivery",
+    "comingSoon": "Coming soon"
+  },
+  "header": {
+    "search": "Search products...",
+    "cart": "Cart",
+    "welcome": "Hi, {name}",
+    "logout": "Log out"
+  },
+  "switcher": {
+    "language": "Language",
+    "currency": "Currency"
+  },
+  "hero": {
+    "disclosureHint": "Tap to see more offer details"
+  },
+  "trust": {
+    "inpost": "InPost Paczkomat delivery",
+    "blik": "BLIK payment",
+    "freeDelivery": "Free delivery from 199 PLN"
+  },
+  "categories": {
+    "title": "Popular categories",
+    "subtitle": "Most chosen by Polish shoppers",
+    "comingSoonTitle": "{category} Arriving Soon!",
+    "comingSoonDesc": "Our premium {category} selection is currently in preparation. Sign up below to get early access and be the first to know when we launch!",
+    "emailPlaceholder": "Enter your email address...",
+    "notifyMe": "Notify Me",
+    "notifyLoading": "Subscribing...",
+    "successTitle": "You're on the list!",
+    "successDesc": "Thank you! We will send you an exclusive launch offer as soon as {category} goes live.",
+    "closeBtn": "Got it, thanks!"
+  },
+  "promo": {
+    "title": "Limited offer",
+    "endsIn": "Ends in",
+    "days": "days",
+    "hours": "hrs",
+    "minutes": "min",
+    "seconds": "sec"
+  },
+  "products": {
+    "featured": "Featured products",
+    "recentPurchase": "Someone from {city} just bought {product}",
+    "goBack": "Go Back",
+    "relatedProducts": "You May Also Like"
+  },
+  "legal": {
+    "terms": "Terms & Conditions",
+    "privacy": "Privacy Policy",
+    "termsTitle": "Store Terms",
+    "privacyTitle": "Privacy Policy",
+    "stubMessage": "Full document content will be published soon in compliance with UOKiK requirements."
+  },
+  "signup": {
+    "title": "Create a free account",
+    "subtitle": "Join over 10,000 satisfied customers in Poland",
+    "fullName": "Full name",
+    "email": "Email address",
+    "password": "Password",
+    "passwordHint": "Password must meet the following criteria:",
+    "reqLength": "Minimum 8 characters",
+    "reqNumber": "At least one number",
+    "reqSpecial": "At least one special character",
+    "termsAccept": "I accept the {terms} and {privacy}",
+    "marketingAccept": "I want to receive information about promotions and special offers (Marketing)",
+    "submit": "Create account",
+    "or": "Or continue with",
+    "googleLogin": "Continue with Google",
+    "alreadyHaveAccount": "Already have an account?",
+    "login": "Log in",
+    "socialProofTitle": "Why join us?",
+    "socialProof1": "Free delivery from 199 PLN to InPost Paczkomaty",
+    "socialProof2": "Secure BLIK payments and fast transfers",
+    "socialProof3": "Hassle-free returns within 14 days",
+    "socialProof4": "Access to limited promotions and sales",
+    "trustBadge": "Secure shopping SSL certified",
+    "successTitle": "Welcome to VistulaVogue!",
+    "successSubtitle": "Your account has been successfully created. We have prepared something special for you!",
+    "successCta": "Go to store",
+      "alreadyExistsTitle": "Account Already Exists",
+      "alreadyExistsSubtitle": "A user with this email address has already signed up. You can only create one account.",
+      "loginNow": "Log in to your account",
+      "weakPasswordTitle": "Weak Password",
+      "weakPasswordSubtitle": "The password does not meet the security requirements.",
+      "genericErrorTitle": "Registration Failed",
+      "genericErrorSubtitle": "An unexpected error occurred. Please try again later."
+  },
+  "login": {
+    "title": "Welcome back",
+    "subtitle": "Log in to your VistulaVogue account to continue",
+    "email": "Email address",
+    "password": "Password",
+    "submit": "Log in",
+    "or": "Or continue with",
+    "googleLogin": "Continue with Google",
+    "dontHaveAccount": "Don't have an account yet?",
+    "signup": "Sign up",
+    "emailNotFound": "This email address is not registered. Please sign up first.",
+    "wrongPassword": "The password you entered is incorrect. Please try again.",
+    "emailNotFoundTitle": "Email Not Found",
+    "wrongPasswordTitle": "Incorrect Password",
+    "successTitle": "Welcome back!",
+    "successSubtitle": "You have successfully logged in. Let's get shopping!",
+    "successCta": "Go to store",
+      "socialProofTitle": "Why shop with us?",
+      "socialProof1": "Free delivery from 199 PLN to InPost Paczkomaty",
+      "socialProof2": "Secure BLIK payments and fast transfers",
+      "socialProof3": "Hassle-free returns within 14 days",
+      "socialProof4": "Access to limited promotions and sales",
+      "trustBadge": "Secure shopping SSL certified",
+      "genericErrorTitle": "Something went wrong",
+      "genericError": "An unexpected error occurred. Please check your internet connection and try again."
+  }
+}
