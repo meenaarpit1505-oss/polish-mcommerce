@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { setRequestLocale } from "next-intl/server";
 import type { Locale } from "@/i18n/routing";
 import { fetchHomeData } from "@/lib/sanity/fetch-home-data";
@@ -22,7 +23,13 @@ export default async function HomePage({
       <HeroSection hero={data.hero} />
       <TrustBar />
       <CategoryNav categories={data.categories} />
-      <PromoSectionBlock promo={data.promo} products={data.products} categories={data.categories} />
+      <Suspense fallback={<section className="min-h-64" />}>
+        <PromoSectionBlock
+          promo={data.promo}
+          products={data.products}
+          categories={data.categories}
+        />
+      </Suspense>
       <RecentPurchaseToast
         purchases={data.recentPurchases}
         enabled={data.promo.showRecentPurchases}

@@ -20,7 +20,8 @@
     "currency": "Waluta"
   },
   "hero": {
-    "disclosureHint": "Stuknij, aby zobaczyć więcej szczegółów oferty"
+    "disclosureHint": "Stuknij, aby zobaczyć więcej szczegółów oferty",
+    "quizCta": "Darmowy Audyt Skóry"
   },
   "trust": {
     "inpost": "Dostawa do Paczkomatu InPost",
@@ -58,7 +59,64 @@
     "privacy": "Polityka Prywatności",
     "termsTitle": "Regulamin sklepu",
     "privacyTitle": "Polityka Prywatności",
-    "stubMessage": "Pełna treść dokumentu zostanie opublikowana wkrótce zgodnie z wymogami UOKiK."
+    "lastUpdated": "Ostatnia aktualizacja: 25 sierpnia 2026",
+    "introText": "Prosimy o uważne zapoznanie się z naszym regulaminem. Poniżej znajduje się zestawienie naszych warunków prawnych wraz z przyjaznym dla człowieka podsumowaniem, które wyjaśnia ich rzeczywiste znaczenie prostym językiem.",
+    "privacyIntroText": "Cenimy Twoją prywatność i bezpieczeństwo danych. Poniżej znajduje się zestawienie naszej Polityki Prywatności (zgodnej z RODO) wraz z przyjaznym dla człowieka podsumowaniem prostym językiem.",
+    "stubMessage": "Pełna treść dokumentu zostanie opublikowana wkrótce zgodnie z wymogami UOKiK.",
+    "sections": {
+      "merchant": {
+        "title": "1. Dane Sprzedawcy",
+        "legal": "Sklep internetowy działający pod adresem Dream-website prowadzony jest przez Dream Corp Sp. z o.o., z siedzibą przy ul. Wiejskiej 12, 00-902 Warszawa, NIP: 1234567890, REGON: 123456789. Kontakt e-mail: support@dreamwebsite.pl.",
+        "plain": "To my! Prowadzimy ten sklep. Jesteśmy zarejestrowaną firmą w Polsce i możesz się z nami skontaktować w każdej chwili pod naszym oficjalnym adresem e-mail."
+      },
+      "payments": {
+        "title": "2. Zamówienia i Płatności",
+        "legal": "Wszystkie ceny podane w Sklepie są cenami brutto (zawierają podatek VAT). Płatności mogą być dokonywane kartą płatniczą, BLIK-iem lub przelewem bankowym. Zamówienia są realizowane niezwłocznie po otrzymaniu i potwierdzeniu płatności.",
+        "plain": "Ceny podane na stronie zawierają już podatek. Możesz bezpiecznie płacić kartą, BLIK-iem lub przelewem. Pakowanie Twojego zamówienia rozpoczynamy od razu po potwierdzeniu wpłaty."
+      },
+      "returns": {
+        "title": "3. 14 Dni na Zwrot i Odstąpienie",
+        "legal": "Zgodnie z polskim prawem ochrony konsumentów, kupujący ma prawo odstąpić od umowy sprzedaży bez podania przyczyny w terminie 14 dni kalendarzowych od dnia odebrania przesyłki. Koszt odesłania zwracanego towaru ponosi konsument.",
+        "plain": "Produkt nie spełnił Twoich oczekiwań? Bez obaw! Masz 14 dni na zwrot towaru i otrzymanie pełnego zwrotu pieniędzy. Jedyne co musisz zrobić, to pokryć koszt wysyłki zwrotnej do nas."
+      },
+      "complaints": {
+        "title": "4. Reklamacje i Rękojmia",
+        "legal": "Sprzedawca odpowiada z tytułu rękojmi, jeżeli produkt jest wadliwy. Reklamacje można składać drogą mailową lub listowną. Sprzedawca rozpatrzy reklamację i poinformuje o decyzji w terminie 14 dni od jej otrzymania.",
+        "plain": "Jeśli Twój produkt dotrze uszkodzony lub zepsuje się z powodu wady fabrycznej, daj nam znać. Szanujemy Twoje prawa z tytułu rękojmi i rozpatrzymy Twoją reklamację w ciągu 14 dni."
+      }
+    },
+    "privacySections": {
+      "controller": {
+        "title": "1. Administrator Danych",
+        "legal": "Administratorem Twoich danych osobowych jest Dream Corp Sp. z o.o., z siedzibą przy ul. Wiejskiej 12, 00-902 Warszawa, NIP: 1234567890, REGON: 123456789. W sprawach ochrony danych możesz skontaktować się z nami pod adresem: support@dreamwebsite.pl.",
+        "plain": "To my dbamy o Twoje dane. Jeśli masz jakiekolwiek pytania dotyczące prywatności lub chcesz usunąć swoje dane, napisz do nas e-mail!"
+      },
+      "purpose": {
+        "title": "2. Cel i Podstawa Przetwarzania",
+        "legal": "Dane osobowe przetwarzane są zgodnie z RODO w celu: realizacji umów sprzedaży (Art. 6 ust. 1 lit. b), obsługi klienta i wsparcia (Art. 6 ust. 1 lit. f), marketingu i newslettera na podstawie zgody (Art. 6 ust. 1 lit. a) oraz spełnienia obowiązków podatkowo-księgowych (Art. 6 ust. 1 lit. c).",
+        "plain": "Zbieramy Twoje dane tylko po to, by wysłać zamówienie, pomóc Ci w zakupach, zapłacić podatki oraz wysyłać newsletter (ale tylko jeśli wyraźnie się na to zapiszesz)."
+      },
+      "sharing": {
+        "title": "3. Odbiorcy Danych i Udostępnianie",
+        "legal": "W celu realizacji zamówień i płatności, dane mogą być udostępniane zaufanym podmiotom trzecim: przewoźnikom (np. InPost, DHL), bramkom płatniczym (np. PayU, BLIK, Stripe) oraz dostawcom usług hostingowych i technicznych.",
+        "plain": "Nigdy nie sprzedajemy Twoich danych. Przekazujemy je tylko firmom, które pomagają nam dostarczyć Twoją paczkę (np. InPost) lub bezpiecznie przetworzyć Twoją płatność."
+      },
+      "retention": {
+        "title": "4. Okres Przechowywania Danych",
+        "legal": "Przechowujemy dane przez okres niezbędny do realizacji umowy, obsługi reklamacji oraz spełnienia wymogów prawa podatkowego (zazwyczaj 5 lat od końca roku podatkowego). Dane marketingowe przetwarzamy do momentu wycofania zgody.",
+        "plain": "Twoje dane zakupowe przechowujemy tak długo, jak wymaga tego polskie prawo podatkowe (zwykle 5 lat). Dane do newslettera usuwamy natychmiast, gdy się wypiszesz."
+      },
+      "rights": {
+        "title": "5. Twoje Prawa (RODO)",
+        "legal": "Zgodnie z RODO przysługuje Ci prawo do dostępu do swoich danych, ich sprostowania, usunięcia („prawo do bycia zapomnianym”), ograniczenia przetwarzania, przenoszenia danych oraz wniesienia skargi do Prezesa UODO (ul. Stawki 2, Warszawa).",
+        "plain": "Twoje dane należą do Ciebie! Możesz w każdej chwili poprosić nas o dostęp do nich, poprawienie błędów lub ich całkowite usunięcie. Masz też prawo zgłosić skargę do Urzędu Ochrony Danych Osobowych."
+      },
+      "cookies": {
+        "title": "6. Pliki Cookies i Technologie Śledzące",
+        "legal": "Nasza strona korzysta z plików cookies w celu zapewnienia prawidłowego działania sklepu, bezpieczeństwa sesji oraz analizy ruchu. Możesz w każdej chwili zmienić ustawienia cookies w swojej przeglądarce, jednak wyłączenie ich może wpłynąć na działanie sklepu.",
+        "plain": "Używamy ciasteczek (cookies), aby utrzymać Twoje logowanie, zabezpieczyć koszyk i badać popularność produktów. Możesz je wyłączyć w ustawieniach przeglądarki."
+      }
+    }
   },
   "signup": {
     "title": "Stwórz darmowe konto",
@@ -79,7 +137,7 @@
     "login": "Zaloguj się",
     "socialProofTitle": "Dlaczego warto do nas dołączyć?",
     "socialProof1": "Darmowa dostawa od 199 zł do Paczkomatów InPost",
-    "socialProof2": "Bezpieczne płatności BLIK i szybkie przelewy",
+    "socialProof2": "Bezpieczne płatności BLIK i kartą płatniczą",
     "socialProof3": "Bezproblemowy zwrot w ciągu 14 dni",
     "socialProof4": "Dostęp do limitowanych promocji i wyprzedaży",
     "trustBadge": "Bezpieczne zakupy certyfikowane SSL",
@@ -113,7 +171,7 @@
     "successCta": "Przejdź do sklepu",
       "socialProofTitle": "Dlaczego warto u nas kupować?",
       "socialProof1": "Darmowa dostawa od 199 zł do Paczkomatów InPost",
-      "socialProof2": "Bezpieczne płatności BLIK i szybkie przelewy",
+      "socialProof2": "Bezpieczne płatności BLIK i kartą płatniczą",
       "socialProof3": "Bezproblemowy zwrot w ciągu 14 dni",
       "socialProof4": "Dostęp do limitowanych promocji i wyprzedaży",
       "trustBadge": "Bezpieczne zakupy certyfikowane SSL",

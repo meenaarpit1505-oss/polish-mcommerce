@@ -17,7 +17,7 @@ export function ProductGallery({ images, title }: ProductGalleryProps) {
   const next = () => setIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
   const prev = () => setIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
 
-  const handleDragEnd = (event: any, info: { offset: { x: number }; velocity: { x: number } }) => {
+  const handleDragEnd = (_event: unknown, info: { offset: { x: number }; velocity: { x: number } }) => {
     const swipeThreshold = 50;
     if (info.offset.x < -swipeThreshold) {
       next();

@@ -42,7 +42,7 @@ export function MagneticButton({
       onMouseLeave={handleMouseLeave}
       whileTap={{ scale: 0.97 }}
       transition={{ type: "spring", stiffness: 400, damping: 20 }}
-      className={`inline-block transition-transform duration-200 ${className}`}
+      className={`block w-full transition-transform duration-200 ${className}`}
     >
       {children}
     </motion.div>
@@ -50,14 +50,14 @@ export function MagneticButton({
 
   if (as === "a" && href) {
     return (
-      <a href={href} onClick={onClick} className="inline-block">
+      <a href={href} onClick={onClick} className={`inline-block ${className}`}>
         {inner}
       </a>
     );
   }
 
   return (
-    <button type="button" onClick={onClick} className="inline-block">
+    <button type="button" onClick={onClick} className={`inline-block ${className}`}>
       {inner}
     </button>
   );

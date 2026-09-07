@@ -30,8 +30,8 @@ export function ProductDetailsAccordion({ product }: { product: ProductDetail })
       title: locale === "pl" ? "Wysyłka i płatności" : "Shipping & Payments",
       icon: Truck,
       text: locale === "pl" 
-        ? "Wszystkie zamówienia wysyłamy w ciągu 24h. Oferujemy dostawę do Paczkomatów InPost, kurierem DHL oraz punkty odbioru Żabka. Bezpieczne płatności BLIK, Apple Pay, Google Pay i szybkie przelewy."
-        : "All orders are dispatched within 24 hours. We offer delivery via InPost, DHL, and local pickup points. Secure payments via card, Google Pay, Apple Pay, and BLIK."
+        ? "Wszystkie zamówienia wysyłamy w ciągu 24h. Oferujemy dostawę do Paczkomatów InPost, kurierem DHL oraz punkty odbioru Żabka. Bezpieczne płatności BLIK, Google Pay i kartą płatniczą Visa/Mastercard (szybkie przelewy Przelewy24 już wkrótce!)."
+        : "All orders are dispatched within 24 hours. We offer delivery via InPost, DHL, and local pickup points. Secure payments via card (Visa/Mastercard), Google Pay, and BLIK (Przelewy24 bank transfers coming soon!)."
     },
     {
       id: "warranty",

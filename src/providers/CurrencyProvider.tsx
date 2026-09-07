@@ -30,7 +30,8 @@ export function CurrencyProvider({ children }: { children: ReactNode }) {
   const [currency, setCurrencyState] = useState<Currency>("PLN");
 
   useEffect(() => {
-    setCurrencyState(readStoredCurrency());
+    const stored = readStoredCurrency();
+    setTimeout(() => setCurrencyState(stored), 0);
   }, []);
 
   const setCurrency = useCallback((next: Currency) => {

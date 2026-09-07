@@ -1,4 +1,4 @@
-import type { HomePageData } from "@/lib/types";
+import type { HomePageData, SponsorCampaign } from "@/lib/types";
 import type { Locale } from "@/i18n/routing";
 
 const promoEndsAt = new Date(Date.now() + 48 * 60 * 60 * 1000).toISOString();
@@ -186,4 +186,52 @@ const mockDataEn: HomePageData = {
 
 export function getMockHomeData(locale: Locale): HomePageData {
   return locale === "en" ? mockDataEn : mockDataPl;
+}
+
+const mockSponsorPl: SponsorCampaign = {
+  campaignId: "lancerto-default-pl",
+  brandName: "Lancerto",
+  isActive: true,
+  locale: "pl",
+  topBannerPromoCode: "LANCERTO15",
+  topBannerEndDate: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString(),
+  topBannerPerk: "-15% na wszystko + darmowa dostawa InPost Paczkomat!",
+  topBannerOfferDescription: "Wyjątkowa kolekcja męska i damska.",
+  topBannerLink: "/?search=Lancerto#produkty",
+  cardPromoCode: "LANCERTO20",
+  cardProductTitle: "Garnitur z wełny premium",
+  cardProductImage: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=650&auto=format&fit=crop",
+  cardOriginalPricePLN: 1899,
+  cardPromoPricePLN: 1499,
+  cardOriginalPriceEUR: 440,
+  cardPromoPriceEUR: 350,
+  cardDescription: "Włoska wełna, perfekcyjny krój i krawiectwo na najwyższym poziomie. Odbierz limitowany rabat partnerski.",
+  cardLink: "/?search=Lancerto#produkty",
+  paczkomatCutoffHour: 16,
+};
+
+const mockSponsorEn: SponsorCampaign = {
+  campaignId: "lancerto-default-en",
+  brandName: "Lancerto",
+  isActive: true,
+  locale: "en",
+  topBannerPromoCode: "LANCERTO15",
+  topBannerEndDate: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString(),
+  topBannerPerk: "Save 15% storewide + Free Shipping!",
+  topBannerOfferDescription: "Discover the premium luxury autumn collection.",
+  topBannerLink: "/?search=Lancerto#produkty",
+  cardPromoCode: "LANCERTO20",
+  cardProductTitle: "Premium Wool Suit",
+  cardProductImage: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=650&auto=format&fit=crop",
+  cardOriginalPricePLN: 1899,
+  cardPromoPricePLN: 1499,
+  cardOriginalPriceEUR: 440,
+  cardPromoPriceEUR: 350,
+  cardDescription: "Premium Italian wool, perfect fit and tailoring at the highest level. Claim your limited partner discount.",
+  cardLink: "/?search=Lancerto#produkty",
+  paczkomatCutoffHour: 16,
+};
+
+export function getMockSponsorshipData(locale: string): SponsorCampaign {
+  return locale === "en" ? mockSponsorEn : mockSponsorPl;
 }

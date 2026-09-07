@@ -20,7 +20,8 @@
     "currency": "Currency"
   },
   "hero": {
-    "disclosureHint": "Tap to see more offer details"
+    "disclosureHint": "Tap to see more offer details",
+    "quizCta": "Free Skin Audit"
   },
   "trust": {
     "inpost": "InPost Paczkomat delivery",
@@ -56,9 +57,66 @@
   "legal": {
     "terms": "Terms & Conditions",
     "privacy": "Privacy Policy",
-    "termsTitle": "Store Terms",
+    "termsTitle": "Store Terms & Conditions",
     "privacyTitle": "Privacy Policy",
-    "stubMessage": "Full document content will be published soon in compliance with UOKiK requirements."
+    "lastUpdated": "Last updated: August 25, 2026",
+    "introText": "Please read our Terms and Conditions carefully. Below is a side-by-side breakdown of our legal terms and what they actually mean in plain, human-friendly English.",
+    "privacyIntroText": "We value your privacy and trust above all. Below is a side-by-side breakdown of our Privacy Policy (RODO/GDPR compliant) and what it actually means for your data in plain, human-friendly English.",
+    "stubMessage": "Full document content will be published soon in compliance with UOKiK requirements.",
+    "sections": {
+      "merchant": {
+        "title": "1. Merchant Information",
+        "legal": "This online store operating at Dream-website is run by Dream Corp Sp. z o.o., located at ul. Wiejska 12, 00-902 Warszawa, NIP: 1234567890, REGON: 123456789. Email contact: support@dreamwebsite.pl.",
+        "plain": "This is us! We run this store. We are a registered business in Poland and you can contact us anytime at our official email."
+      },
+      "payments": {
+        "title": "2. Orders & Payments",
+        "legal": "All prices listed on the Website are gross prices including VAT. Payments can be made via credit card, BLIK, or bank transfer. Orders are processed immediately upon confirmation of successful transaction payment routing.",
+        "plain": "Prices shown include tax. You can pay securely with card, BLIK, or transfer. We start packing your order as soon as payment is confirmed."
+      },
+      "returns": {
+        "title": "3. 14-Day Returns & Withdrawal",
+        "legal": "In accordance with Polish consumer protection law, the buyer has the statutory right to withdraw from the sales agreement without giving any reason within 14 calendar days from receiving the merchandise. The cost of return shipping is borne by the consumer.",
+        "plain": "Don't like what you bought? No worries! You have 14 days to return it for a full refund. You will only have to pay for shipping the item back to us."
+      },
+      "complaints": {
+        "title": "4. Complaints & Warranty",
+        "legal": "The Seller is liable under statutory warranty (rękojmia) if the product is defective. Complaints can be filed via email or registered mail. The Seller will address complaints and communicate a resolution within 14 days of receipt.",
+        "plain": "If your item arrives damaged or breaks due to a manufacturing defect, let us know. We respect your consumer warranty rights and will resolve your complaint within 14 days."
+      }
+    },
+    "privacySections": {
+      "controller": {
+        "title": "1. Data Controller",
+        "legal": "The Data Controller of your personal data is Dream Corp Sp. z o.o., located at ul. Wiejska 12, 00-902 Warszawa, NIP: 1234567890, REGON: 123456789. You can contact us regarding data protection at support@dreamwebsite.pl.",
+        "plain": "We are the controllers of your data. If you have any privacy questions or requests, send us an email!"
+      },
+      "purpose": {
+        "title": "2. Why We Collect Data",
+        "legal": "Personal data is processed in accordance with GDPR (RODO) for: processing orders and sales agreements (Art. 6(1)(b)), customer support (Art. 6(1)(f)), marketing and newsletter communications based on your consent (Art. 6(1)(a)), and compliance with tax/accounting laws (Art. 6(1)(c)).",
+        "plain": "We only collect data to ship your orders, support you with purchases, pay taxes, and send newsletters (but only if you explicitly sign up)."
+      },
+      "sharing": {
+        "title": "3. Data Sharing & Recipients",
+        "legal": "To deliver your orders and handle transactions, your data may be shared with trusted partners: courier/delivery firms (e.g., InPost, DHL), payment gateways (e.g., PayU, BLIK, Stripe), and our secure hosting and technical services providers.",
+        "plain": "We never sell your data. We only share the necessary details with companies that help deliver your packages (like InPost) or process your secure payments."
+      },
+      "retention": {
+        "title": "4. Data Retention Period",
+        "legal": "We store your personal data for the duration required to fulfill the sales agreement, resolve claims, and satisfy Polish tax/accounting retention laws (typically 5 years from the end of the tax year). Marketing data is stored until you withdraw your consent.",
+        "plain": "We keep your order info as long as required by Polish tax laws (usually 5 years). Marketing data is instantly deleted if you unsubscribe."
+      },
+      "rights": {
+        "title": "5. Your Rights (RODO/GDPR)",
+        "legal": "Under GDPR, you have the right to access your personal data, request rectification, deletion ('right to be forgotten'), restriction of processing, data portability, and the right to lodge a complaint with the President of UODO (Stawki 2, Warsaw).",
+        "plain": "You own your data! You can ask us at any time to view, edit, or completely delete your personal details. You also have the right to lodge a formal complaint if you think we've handled things incorrectly."
+      },
+      "cookies": {
+        "title": "6. Cookies & Tracking",
+        "legal": "Our website uses cookies to ensure basic functionality, secure user sessions, and analyze site traffic. You can adjust your cookie settings at any time in your browser, though disabling them may affect store functionalities.",
+        "plain": "We use small files called cookies to keep you logged in, secure the checkout, and see which products are popular. You can turn them off in your browser whenever you want."
+      }
+    }
   },
   "signup": {
     "title": "Create a free account",
@@ -79,7 +137,7 @@
     "login": "Log in",
     "socialProofTitle": "Why join us?",
     "socialProof1": "Free delivery from 199 PLN to InPost Paczkomaty",
-    "socialProof2": "Secure BLIK payments and fast transfers",
+    "socialProof2": "Secure BLIK and credit card payments",
     "socialProof3": "Hassle-free returns within 14 days",
     "socialProof4": "Access to limited promotions and sales",
     "trustBadge": "Secure shopping SSL certified",
@@ -113,7 +171,7 @@
     "successCta": "Go to store",
       "socialProofTitle": "Why shop with us?",
       "socialProof1": "Free delivery from 199 PLN to InPost Paczkomaty",
-      "socialProof2": "Secure BLIK payments and fast transfers",
+      "socialProof2": "Secure BLIK and credit card payments",
       "socialProof3": "Hassle-free returns within 14 days",
       "socialProof4": "Access to limited promotions and sales",
       "trustBadge": "Secure shopping SSL certified",

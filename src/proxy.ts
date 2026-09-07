@@ -5,7 +5,7 @@ import { routing } from "./i18n/routing";
 
 const intlMiddleware = createMiddleware(routing);
 
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
   const isSupabaseConfigured =
@@ -52,7 +52,7 @@ export async function middleware(request: NextRequest) {
   try {
     await supabase.auth.getUser();
   } catch (err) {
-    console.error("Supabase auth session refresh error in middleware:", err);
+    console.error("Supabase auth session refresh error in proxy:", err);
   }
 
   // Run next-intl middleware
@@ -67,5 +67,5 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/", "/(pl|en)/:path*", "/((?!_next|_vercel|studio|auth|.*\\..*).*)"],
+  matcher: ["/", "/(pl|en)/:path*", "/((?!_next|_vercel|studio|auth|api|.*\\..*).*)"],
 };

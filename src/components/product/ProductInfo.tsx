@@ -7,7 +7,9 @@ import { useCurrency } from "@/providers/CurrencyProvider";
 import { formatPrice, getProductPrice, getProductOriginalPrice } from "@/lib/currency";
 import { useLocale, useTranslations } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
+import { useCart } from "@/providers/CartProvider";
 import type { ProductDetail } from "@/lib/types";
+import { RestockAlert } from "@/components/RestockAlert";
 
 interface ProductInfoProps {
   product: ProductDetail;
@@ -40,9 +42,11 @@ export function ProductInfo({ product, reviewsSummary }: ProductInfoProps) {
   // Cart adding animation state
   const [isAdding, setIsAdding] = useState(false);
   const [isAdded, setIsAdded] = useState(false);
+  const { addItem } = useCart();
 
   const handleAddToCart = () => {
     setIsAdding(true);
+    addItem(product, 1, selectedColor, selectedSize);
     setTimeout(() => {
       setIsAdding(false);
       setIsAdded(true);
@@ -188,69 +192,75 @@ export function ProductInfo({ product, reviewsSummary }: ProductInfoProps) {
       })}
 
       {/* Low-Stock Warning Progression Bar */}
-      <div className="space-y-2 py-2">
-        <div className="flex items-center gap-2">
-          <span className="relative flex h-2 w-2">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-rose-500 opacity-75"></span>
-            <span className="relative inline-flex h-2 w-2 rounded-full bg-rose-500"></span>
-          </span>
-          <p className="text-xs font-bold text-rose-600">
-            {locale === "pl" 
-              ? `Pośpiesz się! Ostatnie ${product.stockCount} sztuk w magazynie.`
-              : `Hurry! Only ${product.stockCount} items left in stock.`
-            }
-          </p>
+      {product.stockCount > 0 && (
+        <div className="space-y-2 py-2">
+          <div className="flex items-center gap-2">
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-rose-500 opacity-75"></span>
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-rose-500"></span>
+            </span>
+            <p className="text-xs font-bold text-rose-600">
+              {locale === "pl" 
+                ? `Pośpiesz się! Ostatnie ${product.stockCount} sztuk w magazynie.`
+                : `Hurry! Only ${product.stockCount} items left in stock.`
+              }
+            </p>
+          </div>
+          <div className="h-1.5 w-full rounded-full bg-accent/10 overflow-hidden">
+            <div 
+              style={{ width: `${percentage}%` }}
+              className="h-full rounded-full bg-rose-500 transition-all duration-1000 ease-out"
+            />
+          </div>
         </div>
-        <div className="h-1.5 w-full rounded-full bg-accent/10 overflow-hidden">
-          <div 
-            style={{ width: `${percentage}%` }}
-            className="h-full rounded-full bg-rose-500 transition-all duration-1000 ease-out"
-          />
-        </div>
-      </div>
+      )}
 
-      {/* High-Contrast Interactive Add to Cart button */}
+      {/* High-Contrast Interactive Add to Cart button or Restock Alert */}
       <div className="pt-2">
-        <button
-          type="button"
-          onClick={handleAddToCart}
-          disabled={product.stockCount === 0 || isAdding}
-          className="relative flex w-full items-center justify-center overflow-hidden rounded-full bg-primary py-4 text-sm font-black text-white shadow-lg shadow-primary/20 hover:bg-primaryDark transition-all hover:scale-[1.01] active:scale-[0.99] disabled:bg-neutral-300 disabled:shadow-none disabled:cursor-not-allowed cursor-pointer"
-        >
-          <AnimatePresence mode="wait">
-            {isAdded ? (
-              <motion.span
-                key="added"
-                initial={{ y: 15, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                exit={{ y: -15, opacity: 0 }}
-                className="flex items-center gap-1.5"
-              >
-                <Check className="h-4.5 w-4.5 stroke-[3px]" />
-                {locale === "pl" ? "Dodano do koszyka!" : "Added to Cart!"}
-              </motion.span>
-            ) : isAdding ? (
-              <motion.span
-                key="adding"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                className="flex h-5 w-5 animate-spin rounded-full border-2 border-white border-t-transparent"
-              />
-            ) : (
-              <motion.span
-                key="default"
-                initial={{ y: -15, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                exit={{ y: 15, opacity: 0 }}
-                className="flex items-center gap-2"
-              >
-                <ShoppingCart className="h-4.5 w-4.5" />
-                {locale === "pl" ? "Dodaj do koszyka" : "Add to Cart"}
-              </motion.span>
-            )}
-          </AnimatePresence>
-        </button>
+        {product.stockCount === 0 ? (
+          <RestockAlert productSlug={product.slug} productName={product.title} />
+        ) : (
+          <button
+            type="button"
+            onClick={handleAddToCart}
+            disabled={isAdding}
+            className="relative flex w-full items-center justify-center overflow-hidden rounded-full bg-primary py-4 text-sm font-black text-white shadow-lg shadow-primary/20 hover:bg-primaryDark transition-all hover:scale-[1.01] active:scale-[0.99] disabled:bg-neutral-300 disabled:shadow-none disabled:cursor-not-allowed cursor-pointer"
+          >
+            <AnimatePresence mode="wait">
+              {isAdded ? (
+                <motion.span
+                  key="added"
+                  initial={{ y: 15, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  exit={{ y: -15, opacity: 0 }}
+                  className="flex items-center gap-1.5"
+                >
+                  <Check className="h-4.5 w-4.5 stroke-[3px]" />
+                  {locale === "pl" ? "Dodano do koszyka!" : "Added to Cart!"}
+                </motion.span>
+              ) : isAdding ? (
+                <motion.span
+                  key="adding"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  className="flex h-5 w-5 animate-spin rounded-full border-2 border-white border-t-transparent"
+                />
+              ) : (
+                <motion.span
+                  key="default"
+                  initial={{ y: -15, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  exit={{ y: 15, opacity: 0 }}
+                  className="flex items-center gap-2"
+                >
+                  <ShoppingCart className="h-4.5 w-4.5" />
+                  {locale === "pl" ? "Dodaj do koszyka" : "Add to Cart"}
+                </motion.span>
+              )}
+            </AnimatePresence>
+          </button>
+        )}
       </div>
 
       {/* Trust Badges - InPost and BLIK */}

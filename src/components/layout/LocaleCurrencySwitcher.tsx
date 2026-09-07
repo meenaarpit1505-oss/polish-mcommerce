@@ -2,7 +2,7 @@
 
 import { useLocale } from "next-intl";
 import { usePathname, useRouter } from "@/i18n/navigation";
-import { useState, useTransition, useEffect } from "react";
+import { useState, useTransition } from "react";
 import { motion } from "framer-motion";
 
 // High-quality, lightweight SVG Flag Components
@@ -40,14 +40,15 @@ export function LocaleCurrencySwitcher() {
   const pathname = usePathname();
   const router = useRouter();
 
-  // Optimistic state for instant visual feedback
+  // Keep local state in sync with actual locale if it changes externally
   const [activeLocale, setActiveLocale] = useState<"pl" | "en">(locale);
+  const [prevLocale, setPrevLocale] = useState<"pl" | "en">(locale);
   const [, startTransition] = useTransition();
 
-  // Keep local state in sync with actual locale if it changes externally
-  useEffect(() => {
+  if (locale !== prevLocale) {
+    setPrevLocale(locale);
     setActiveLocale(locale);
-  }, [locale]);
+  }
 
   const handleLocaleChange = (nextLocale: "pl" | "en") => {
     if (locale !== nextLocale) {

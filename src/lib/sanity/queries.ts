@@ -49,3 +49,27 @@ export const featuredProductsQuery = groq`
     isFeatured
   }
 `;
+
+export const activeSponsorshipQuery = groq`
+  *[_type == "sponsorCampaign" && isActive == true && locale == $locale][0] {
+    campaignId,
+    brandName,
+    isActive,
+    locale,
+    topBannerPromoCode,
+    topBannerEndDate,
+    topBannerPerk,
+    topBannerOfferDescription,
+    topBannerLink,
+    cardPromoCode,
+    cardProductTitle,
+    "cardProductImage": cardProductImage.asset->url,
+    cardOriginalPricePLN,
+    cardPromoPricePLN,
+    cardOriginalPriceEUR,
+    cardPromoPriceEUR,
+    cardDescription,
+    cardLink,
+    paczkomatCutoffHour
+  }
+`;

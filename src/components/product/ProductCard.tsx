@@ -63,34 +63,34 @@ export function ProductCard({
             src={product.image}
             alt={product.title}
             fill
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 33vw"
             className="object-cover transition-transform duration-500 group-hover:scale-105"
           />
           {showStock && isLowStock && (
-            <span className="absolute left-3 top-3 rounded-full bg-primary px-2.5 py-1 text-xs font-semibold text-white">
+            <span className="absolute left-2 top-2 sm:left-3 sm:top-3 rounded-full bg-primary px-2 py-0.5 sm:px-2.5 sm:py-1 text-[10px] sm:text-xs font-semibold text-white">
               {t("limitedStock")}
             </span>
           )}
         </div>
 
-        <div className="p-4">
-          <h3 className="font-semibold text-foreground line-clamp-2 group-hover:text-primary transition-colors">
+        <div className="p-3 sm:p-4">
+          <h3 className="text-sm sm:text-base font-semibold text-foreground line-clamp-2 group-hover:text-primary transition-colors">
             {product.title}
           </h3>
 
-          <div className="mt-2 flex items-baseline gap-2">
-            <span className="text-lg font-bold text-primary">
+          <div className="mt-1.5 sm:mt-2 flex items-baseline gap-1.5 sm:gap-2">
+            <span className="text-base sm:text-lg font-bold text-primary">
               {formatPrice(price, currency, intlLocale)}
             </span>
             {originalPrice && (
-              <span className="text-sm text-muted line-through">
+              <span className="text-xs sm:text-sm text-muted line-through">
                 {formatPrice(originalPrice, currency, intlLocale)}
               </span>
             )}
           </div>
 
           {showStock && (
-            <p className="mt-1 text-xs text-muted">
+            <p className="mt-1 text-[10px] sm:text-xs text-muted">
               {product.stockCount} {t("leftInStock")}
             </p>
           )}

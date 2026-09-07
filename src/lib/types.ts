@@ -71,3 +71,25 @@ export interface HomePageData {
   promo: PromoSection;
   recentPurchases: RecentPurchase[];
 }
+
+export interface SponsorCampaign {
+  campaignId: string;
+  brandName: string;
+  isActive: boolean;
+  locale: string;
+  topBannerPromoCode: string;
+  topBannerEndDate: string;
+  topBannerPerk: string;
+  topBannerOfferDescription: string;
+  topBannerLink?: string;
+  cardPromoCode: string;
+  cardProductTitle: string;
+  cardProductImage: string;
+  cardOriginalPricePLN: number;
+  cardPromoPricePLN: number;
+  cardOriginalPriceEUR: number;
+  cardPromoPriceEUR: number;
+  cardDescription: string;
+  cardLink?: string;
+  paczkomatCutoffHour: number;
+}

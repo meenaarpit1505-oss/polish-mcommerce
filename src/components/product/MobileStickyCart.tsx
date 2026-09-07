@@ -7,6 +7,7 @@ import { useLocale } from "next-intl";
 import { useCurrency } from "@/providers/CurrencyProvider";
 import { formatPrice, getProductPrice } from "@/lib/currency";
 import { motion, AnimatePresence } from "framer-motion";
+import { useCart } from "@/providers/CartProvider";
 import type { ProductDetail } from "@/lib/types";
 
 export function MobileStickyCart({ product }: { product: ProductDetail }) {
@@ -19,6 +20,7 @@ export function MobileStickyCart({ product }: { product: ProductDetail }) {
   // Cart adding state
   const [isAdding, setIsAdding] = useState(false);
   const [isAdded, setIsAdded] = useState(false);
+  const { addItem } = useCart();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,6 +34,11 @@ export function MobileStickyCart({ product }: { product: ProductDetail }) {
 
   const handleQuickAdd = () => {
     setIsAdding(true);
+    // Add default variants for quick-add (first color, first size if available)
+    const defaultColor = product.variants?.[0]?.options[0]?.value;
+    const defaultSize = product.variants?.[1]?.options[1]?.value || "M";
+    addItem(product, 1, defaultColor, defaultSize);
+    
     setTimeout(() => {
       setIsAdding(false);
       setIsAdded(true);

@@ -1,4 +1,5 @@
-import type { Product, ProductDetail, Locale } from "@/lib/types";
+import type { Product, ProductDetail } from "@/lib/types";
+import type { Locale } from "@/i18n/routing";
 import { isSanityConfigured, sanityClient } from "./client";
 import { getMockHomeData } from "./mock-data";
 import groq from "groq";
@@ -36,6 +37,7 @@ export const productBySlugQuery = groq`
 `;
 
 // This function dynamically enriches any simple product with rich detail fields for a premium demo look
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function enrichProductWithDetails(product: any, locale: string): ProductDetail {
   const isEn = locale === "en";
 
@@ -194,6 +196,7 @@ export async function fetchProductBySlug(slug: string, locale: string): Promise<
   // If Sanity is configured and client exists, try to query Sanity
   if (isSanityConfigured && sanityClient) {
     try {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const product = await sanityClient.fetch<any | null>(productBySlugQuery, {
         slug,
         locale

@@ -7,6 +7,7 @@ import { ChevronDown, Sparkles } from "lucide-react";
 import { useTranslations } from "next-intl";
 import type { HeroBanner } from "@/lib/types";
 import { MagneticButton } from "@/components/ui/MagneticButton";
+import { Link } from "@/i18n/navigation";
 
 interface HeroSectionProps {
   hero: HeroBanner;
@@ -35,7 +36,7 @@ export function HeroSection({ hero }: HeroSectionProps) {
       opacity: 1,
       y: 0,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         stiffness: 100,
         damping: 18,
       },
@@ -110,6 +111,17 @@ export function HeroSection({ hero }: HeroSectionProps) {
                 </span>
               </div>
             </MagneticButton>
+
+            <Link href="/quiz" className="inline-block">
+              <MagneticButton as="button">
+                <div className="relative group overflow-hidden rounded-full border border-primary/40 hover:border-primary bg-primary/10 px-8 py-3.5 text-sm font-extrabold text-primary shadow-md hover:shadow-lg transition-all duration-300">
+                  <span className="flex items-center gap-2">
+                    <Sparkles className="h-4 w-4 text-primary animate-pulse" />
+                    {t("quizCta")}
+                  </span>
+                </div>
+              </MagneticButton>
+            </Link>
 
             <button
               type="button"

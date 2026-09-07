@@ -23,7 +23,14 @@ const iconMap: Record<string, LucideIcon> = {
   smartphone: Smartphone,
 };
 
-const COMING_SOON_SLUGS = ["moda", "elektronika", "fashion", "electronics"];
+const COMING_SOON_SLUGS = [
+  "moda",
+  "elektronika",
+  "fashion",
+  "electronics",
+  "zywnosc-i-napoje",
+  "food-beverage",
+];
 
 interface CategoryNavProps {
   categories: Category[];
@@ -66,15 +73,15 @@ export function CategoryNav({ categories }: CategoryNavProps) {
           <p className="mt-1 text-sm text-muted">{t("subtitle")}</p>
         </div>
 
-        <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-hide sm:grid sm:grid-cols-4 sm:overflow-visible sm:pb-0">
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
           {categories.map((category) => {
             const Icon = iconMap[category.icon] ?? Shirt;
             return (
-              <MagneticButton key={category._id} className="shrink-0 sm:shrink">
+              <MagneticButton key={category._id} className="h-full w-full">
                 <a
                   href={`#${category.slug}`}
                   onClick={(e) => handleCategoryClick(e, category)}
-                  className="flex min-h-22 min-w-35 flex-col items-center justify-center gap-2 rounded-2xl border border-accent/15 bg-surface p-4 shadow-sm transition-shadow hover:shadow-md sm:min-w-0"
+                  className="flex h-full w-full min-h-22 flex-col items-center justify-center gap-2 rounded-2xl border border-accent/15 bg-surface p-4 shadow-sm transition-shadow hover:shadow-md"
                 >
                   <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
                     <Icon className="h-6 w-6" aria-hidden="true" />

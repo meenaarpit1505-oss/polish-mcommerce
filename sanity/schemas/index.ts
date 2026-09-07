@@ -131,4 +131,169 @@ export const home = defineType({
   ],
 });
 
-export const schemaTypes = [heroBanner, category, product, promoSection, recentPurchase, home];
+export const sponsorCampaign = defineType({
+  name: "sponsorCampaign",
+  title: "Sponsor Campaign",
+  type: "document",
+  fieldsets: [
+    { name: "identity", title: "Campaign identity" },
+    { name: "topBanner", title: "Top-of-page banner" },
+    { name: "inFeedCard", title: "In-feed sponsored card" },
+  ],
+  fields: [
+    defineField({
+      name: "campaignId",
+      title: "Campaign ID",
+      type: "string",
+      fieldset: "identity",
+      description:
+        "Stable ID used for analytics and dismiss state, e.g. lancerto-sep-2026. Change this when a new paid month starts so returning visitors see the new banner.",
+      validation: (Rule) =>
+        Rule.required()
+          .max(80)
+          .regex(/^[a-zA-Z0-9._-]+$/, {
+            name: "campaign id",
+            invert: false,
+          }),
+    }),
+    defineField({
+      name: "brandName",
+      title: "Brand Name",
+      type: "string",
+      fieldset: "identity",
+      validation: (Rule) => Rule.required().max(80),
+    }),
+    defineField({
+      name: "isActive",
+      title: "Is Active",
+      type: "boolean",
+      fieldset: "identity",
+      description:
+        "The storefront shows the first active campaign for each locale. Turn this on when the sponsor's paid month starts.",
+      initialValue: false,
+    }),
+    defineField({
+      name: "locale",
+      title: "Locale",
+      type: "string",
+      fieldset: "identity",
+      options: { list: ["pl", "en"] },
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: "topBannerPromoCode",
+      title: "Promo Code",
+      type: "string",
+      fieldset: "topBanner",
+    }),
+    defineField({
+      name: "topBannerEndDate",
+      title: "End Date",
+      type: "datetime",
+      fieldset: "topBanner",
+    }),
+    defineField({
+      name: "topBannerPerk",
+      title: "Perk",
+      type: "string",
+      fieldset: "topBanner",
+      description: "e.g. -15% on everything + free shipping",
+    }),
+    defineField({
+      name: "topBannerOfferDescription",
+      title: "Offer Description",
+      type: "string",
+      fieldset: "topBanner",
+    }),
+    defineField({
+      name: "topBannerLink",
+      title: "Link",
+      type: "string",
+      fieldset: "topBanner",
+      description: "Internal path (/?search=Brand#produkty) or full https URL.",
+    }),
+    defineField({
+      name: "cardPromoCode",
+      title: "Promo Code",
+      type: "string",
+      fieldset: "inFeedCard",
+    }),
+    defineField({
+      name: "cardProductTitle",
+      title: "Product Title",
+      type: "string",
+      fieldset: "inFeedCard",
+    }),
+    defineField({
+      name: "cardProductImage",
+      title: "Product Image",
+      type: "image",
+      fieldset: "inFeedCard",
+      options: { hotspot: true },
+    }),
+    defineField({
+      name: "cardOriginalPricePLN",
+      title: "Original Price (PLN)",
+      type: "number",
+      fieldset: "inFeedCard",
+    }),
+    defineField({
+      name: "cardPromoPricePLN",
+      title: "Promo Price (PLN)",
+      type: "number",
+      fieldset: "inFeedCard",
+    }),
+    defineField({
+      name: "cardOriginalPriceEUR",
+      title: "Original Price (EUR)",
+      type: "number",
+      fieldset: "inFeedCard",
+    }),
+    defineField({
+      name: "cardPromoPriceEUR",
+      title: "Promo Price (EUR)",
+      type: "number",
+      fieldset: "inFeedCard",
+    }),
+    defineField({
+      name: "cardDescription",
+      title: "Description",
+      type: "text",
+      fieldset: "inFeedCard",
+    }),
+    defineField({
+      name: "cardLink",
+      title: "Link",
+      type: "string",
+      fieldset: "inFeedCard",
+      description: "Internal path or full https URL.",
+    }),
+    defineField({
+      name: "paczkomatCutoffHour",
+      title: "Paczkomat Cutoff Hour",
+      type: "number",
+      fieldset: "inFeedCard",
+      description: "Hour of day (0-23) used for the same-day shipping countdown.",
+      validation: (Rule) => Rule.min(0).max(23),
+      initialValue: 16,
+    }),
+  ],
+  preview: {
+    select: {
+      title: "brandName",
+      campaignId: "campaignId",
+      locale: "locale",
+      isActive: "isActive",
+      media: "cardProductImage",
+    },
+    prepare({ title, campaignId, locale, isActive, media }) {
+      return {
+        title: title || "Untitled campaign",
+        subtitle: `${isActive ? "Active" : "Inactive"} · ${locale || "?"} · ${campaignId || "no-id"}`,
+        media,
+      };
+    },
+  },
+});
+
+export const schemaTypes = [heroBanner, category, product, promoSection, recentPurchase, home, sponsorCampaign];
