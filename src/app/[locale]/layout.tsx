@@ -11,8 +11,11 @@ import { ThemeProvider } from "@/providers/ThemeProvider";
 import { CartProvider } from "@/providers/CartProvider";
 import { Header } from "@/components/layout/Header";
 import { LegalStrip } from "@/components/layout/LegalStrip";
-import { ExclusiveDiscountFooter } from "@/components/layout/ExclusiveDiscountFooter";
 import "../globals.css";
+
+const MYLEAD_VERIFICATION_TOKENS = [
+  "e056bba49dc780db1425a0a91a0ccebc",
+] as const;
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -40,6 +43,9 @@ export async function generateMetadata({
   return {
     title: `${brand.name} — ${tagline}`,
     description: tagline,
+    other: {
+      "mylead-verification": [...MYLEAD_VERIFICATION_TOKENS],
+    },
   };
 }
 
@@ -63,6 +69,9 @@ export default async function LocaleLayout({
       suppressHydrationWarning
     >
       <head>
+        {MYLEAD_VERIFICATION_TOKENS.map((token) => (
+          <meta key={token} name="mylead-verification" content={token} />
+        ))}
         <script
           dangerouslySetInnerHTML={{
             __html: `try{if(localStorage.theme==='dark'||(!('theme' in localStorage)&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark')}else{document.documentElement.classList.remove('dark')}}catch(e){}`,
@@ -70,6 +79,14 @@ export default async function LocaleLayout({
         />
       </head>
       <body className="flex min-h-full flex-col bg-background text-foreground transition-colors duration-300">
+        <div
+          hidden
+          dangerouslySetInnerHTML={{
+            __html: MYLEAD_VERIFICATION_TOKENS.map(
+              (token) => `<!-- mylead-verification:${token} -->${token}`,
+            ).join(""),
+          }}
+        />
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider>
             <CurrencyProvider>
@@ -83,7 +100,6 @@ export default async function LocaleLayout({
                 </Suspense>
                 <main className="flex-1">{children}</main>
                 <LegalStrip />
-                <ExclusiveDiscountFooter lang={locale === "pl" ? "pl" : "en"} />
               </CartProvider>
             </CurrencyProvider>
           </ThemeProvider>
