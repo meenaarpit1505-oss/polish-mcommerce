@@ -57,54 +57,55 @@
   "legal": {
     "terms": "Regulamin",
     "privacy": "Polityka Prywatności",
-    "termsTitle": "Regulamin sklepu",
+    "termsTitle": "Regulamin serwisu",
     "privacyTitle": "Polityka Prywatności",
-    "lastUpdated": "Ostatnia aktualizacja: 25 sierpnia 2026",
-    "introText": "Prosimy o uważne zapoznanie się z naszym regulaminem. Poniżej znajduje się zestawienie naszych warunków prawnych wraz z przyjaznym dla człowieka podsumowaniem, które wyjaśnia ich rzeczywiste znaczenie prostym językiem.",
-    "privacyIntroText": "Cenimy Twoją prywatność i bezpieczeństwo danych. Poniżej znajduje się zestawienie naszej Polityki Prywatności (zgodnej z RODO) wraz z przyjaznym dla człowieka podsumowaniem prostym językiem.",
+    "lastUpdated": "Ostatnia aktualizacja: 13 września 2026",
+    "contactEmail": "meenaarpit907@gmail.com",
+    "introText": "Prosimy o uważne zapoznanie się z regulaminem serwisu VistulaVogue. Poniżej znajduje się zestawienie warunków — w tym modelu rekomendacji afiliacyjnych — wraz z przyjaznym dla człowieka podsumowaniem prostym językiem.",
+    "privacyIntroText": "Cenimy Twoją prywatność i bezpieczeństwo danych. Poniżej znajduje się zestawienie Polityki Prywatności (zgodnej z RODO) wraz z przyjaznym dla człowieka podsumowaniem prostym językiem.",
     "stubMessage": "Pełna treść dokumentu zostanie opublikowana wkrótce zgodnie z wymogami UOKiK.",
     "sections": {
       "merchant": {
-        "title": "1. Dane Sprzedawcy",
-        "legal": "Sklep internetowy działający pod adresem Dream-website prowadzony jest przez Dream Corp Sp. z o.o., z siedzibą przy ul. Wiejskiej 12, 00-902 Warszawa, NIP: 1234567890, REGON: 123456789. Kontakt e-mail: support@dreamwebsite.pl.",
-        "plain": "To my! Prowadzimy ten sklep. Jesteśmy zarejestrowaną firmą w Polsce i możesz się z nami skontaktować w każdej chwili pod naszym oficjalnym adresem e-mail."
+        "title": "1. Wydawca serwisu",
+        "legal": "Serwis internetowy VistulaVogue, dostępny pod adresem https://polish-mcommerce.vercel.app, jest prowadzony przez niezależnego wydawcę/dewelopera serwisu (osoba fizyczna, nie spółka z ograniczoną odpowiedzialnością). Wydawca nie jest polskim sprzedawcą i nie posiada numeru NIP sprzedawcy. Serwis rekomenduje produkty partnerów Nutriprofits; zakup i płatność odbywają się w sklepie partnera, a nie na tej stronie. Kontakt e-mail: meenaarpit907@gmail.com.",
+        "plain": "To nie jest sklep spółki z o.o. Stronę prowadzi niezależny wydawca. Polecamy produkty partnerów Nutriprofits — płatność i dostawa są po stronie sklepu partnera. Pisz na meenaarpit907@gmail.com."
       },
       "payments": {
-        "title": "2. Zamówienia i Płatności",
-        "legal": "Wszystkie ceny podane w Sklepie są cenami brutto (zawierają podatek VAT). Płatności mogą być dokonywane kartą płatniczą, BLIK-iem lub przelewem bankowym. Zamówienia są realizowane niezwłocznie po otrzymaniu i potwierdzeniu płatności.",
-        "plain": "Ceny podane na stronie zawierają już podatek. Możesz bezpiecznie płacić kartą, BLIK-iem lub przelewem. Pakowanie Twojego zamówienia rozpoczynamy od razu po potwierdzeniu wpłaty."
+        "title": "2. Rekomendacje i zakupy u partnera",
+        "legal": "VistulaVogue nie prowadzi sprzedaży jako polski przedsiębiorca i nie przyjmuje na tej stronie płatności kartą, BLIK-iem ani przelewem. Odnośniki do produktów mogą być linkami afiliacyjnymi Nutriprofits. Ceny, metody płatności, dostawa i umowa sprzedaży są ustalane przez sklep partnera, w którym finalizowany jest zakup.",
+        "plain": "Nie sprzedajemy produktów na tej stronie i nie pobieramy numerów kart. Klikając w rekomendację, przechodzisz do sklepu partnera i tam kupujesz."
       },
       "returns": {
-        "title": "3. 14 Dni na Zwrot i Odstąpienie",
-        "legal": "Zgodnie z polskim prawem ochrony konsumentów, kupujący ma prawo odstąpić od umowy sprzedaży bez podania przyczyny w terminie 14 dni kalendarzowych od dnia odebrania przesyłki. Koszt odesłania zwracanego towaru ponosi konsument.",
-        "plain": "Produkt nie spełnił Twoich oczekiwań? Bez obaw! Masz 14 dni na zwrot towaru i otrzymanie pełnego zwrotu pieniędzy. Jedyne co musisz zrobić, to pokryć koszt wysyłki zwrotnej do nas."
+        "title": "3. Zwroty i odstąpienie od umowy",
+        "legal": "Ponieważ umowa sprzedaży zawierana jest ze sklepem partnera, prawo odstąpienia od umowy, zwroty i refundacje regulują warunki partnera oraz właściwe przepisy o ochronie konsumentów. Wydawca VistulaVogue nie jest stroną umowy sprzedaży rekomendowanych produktów.",
+        "plain": "Zwroty i odstąpienie załatwiasz ze sklepem partnera, u którego kupiłeś produkt — nie z tą stroną."
       },
       "complaints": {
-        "title": "4. Reklamacje i Rękojmia",
-        "legal": "Sprzedawca odpowiada z tytułu rękojmi, jeżeli produkt jest wadliwy. Reklamacje można składać drogą mailową lub listowną. Sprzedawca rozpatrzy reklamację i poinformuje o decyzji w terminie 14 dni od jej otrzymania.",
-        "plain": "Jeśli Twój produkt dotrze uszkodzony lub zepsuje się z powodu wady fabrycznej, daj nam znać. Szanujemy Twoje prawa z tytułu rękojmi i rozpatrzymy Twoją reklamację w ciągu 14 dni."
+        "title": "4. Reklamacje i kontakt",
+        "legal": "Reklamacje dotyczące zakupionych produktów należy składać do sprzedawcy w sklepie partnera, zgodnie z jego regulaminem. Pytania o działanie serwisu VistulaVogue, rekomendacje lub dane osobowe: meenaarpit907@gmail.com.",
+        "plain": "Problem z produktem? Napisz do sklepu partnera. Pytania o tę stronę — meenaarpit907@gmail.com."
       }
     },
     "privacySections": {
       "controller": {
         "title": "1. Administrator Danych",
-        "legal": "Administratorem Twoich danych osobowych jest Dream Corp Sp. z o.o., z siedzibą przy ul. Wiejskiej 12, 00-902 Warszawa, NIP: 1234567890, REGON: 123456789. W sprawach ochrony danych możesz skontaktować się z nami pod adresem: support@dreamwebsite.pl.",
-        "plain": "To my dbamy o Twoje dane. Jeśli masz jakiekolwiek pytania dotyczące prywatności lub chcesz usunąć swoje dane, napisz do nas e-mail!"
+        "legal": "Administratorem danych osobowych przetwarzanych w związku z działaniem serwisu VistulaVogue (https://polish-mcommerce.vercel.app) jest niezależny wydawca/deweloper serwisu (osoba fizyczna, nie spółka z o.o.). Wydawca nie jest polskim sprzedawcą i nie posiada numeru NIP sprzedawcy. W sprawach ochrony danych: meenaarpit907@gmail.com.",
+        "plain": "O Twoje dane dba niezależny wydawca tej strony, nie spółka z o.o. Pytania o prywatność: meenaarpit907@gmail.com."
       },
       "purpose": {
         "title": "2. Cel i Podstawa Przetwarzania",
-        "legal": "Dane osobowe przetwarzane są zgodnie z RODO w celu: realizacji umów sprzedaży (Art. 6 ust. 1 lit. b), obsługi klienta i wsparcia (Art. 6 ust. 1 lit. f), marketingu i newslettera na podstawie zgody (Art. 6 ust. 1 lit. a) oraz spełnienia obowiązków podatkowo-księgowych (Art. 6 ust. 1 lit. c).",
-        "plain": "Zbieramy Twoje dane tylko po to, by wysłać zamówienie, pomóc Ci w zakupach, zapłacić podatki oraz wysyłać newsletter (ale tylko jeśli wyraźnie się na to zapiszesz)."
+        "legal": "Dane osobowe (w szczególności adres e-mail) przetwarzane są zgodnie z RODO w celu: obsługi quizu i materiałów edukacyjnych (Art. 6 ust. 1 lit. b lub f), kontaktu w sprawie serwisu (Art. 6 ust. 1 lit. f), marketingu i newslettera wyłącznie na podstawie zgody (Art. 6 ust. 1 lit. a) oraz zapewnienia bezpieczeństwa i działania strony. Serwis nie przetwarza danych w celu realizacji własnej umowy sprzedaży ani obowiązków podatkowo-księgowych sprzedawcy, ponieważ nie sprzedaje produktów jako polski przedsiębiorca.",
+        "plain": "Zbieramy dane głównie po to, by wysłać raport z quizu, odpowiadać na wiadomości i — tylko za zgodą — newsletter. Nie zbieramy danych po to, by sprzedawać Ci produkt na tej stronie."
       },
       "sharing": {
         "title": "3. Odbiorcy Danych i Udostępnianie",
-        "legal": "W celu realizacji zamówień i płatności, dane mogą być udostępniane zaufanym podmiotom trzecim: przewoźnikom (np. InPost, DHL), bramkom płatniczym (np. PayU, BLIK, Stripe) oraz dostawcom usług hostingowych i technicznych.",
-        "plain": "Nigdy nie sprzedajemy Twoich danych. Przekazujemy je tylko firmom, które pomagają nam dostarczyć Twoją paczkę (np. InPost) lub bezpiecznie przetworzyć Twoją płatność."
+        "legal": "Dane mogą być przetwarzane przez dostawców hostingu i infrastruktury technicznej (w tym Vercel) w celu działania serwisu. Jeśli przejdziesz do sklepu partnera Nutriprofits, dalsze przetwarzanie danych zakupowych odbywa się u partnera na jego zasadach. Nie sprzedajemy Twoich danych. Serwis nie udostępnia danych kurierom ani bramkom płatniczym, ponieważ nie realizuje własnej sprzedaży.",
+        "plain": "Nie sprzedajemy Twoich danych. Hosting trzyma stronę. Gdy kupujesz u partnera, to on przetwarza dane zamówienia."
       },
       "retention": {
         "title": "4. Okres Przechowywania Danych",
-        "legal": "Przechowujemy dane przez okres niezbędny do realizacji umowy, obsługi reklamacji oraz spełnienia wymogów prawa podatkowego (zazwyczaj 5 lat od końca roku podatkowego). Dane marketingowe przetwarzamy do momentu wycofania zgody.",
-        "plain": "Twoje dane zakupowe przechowujemy tak długo, jak wymaga tego polskie prawo podatkowe (zwykle 5 lat). Dane do newslettera usuwamy natychmiast, gdy się wypiszesz."
+        "legal": "Dane związane z działaniem serwisu (np. zapisy quizu lub newsletter) przechowujemy tak długo, jak jest to potrzebne do wskazanego celu lub do wycofania zgody. Dane marketingowe usuwamy po cofnięciu zgody. Ponieważ wydawca nie prowadzi sprzedaży jako polski przedsiębiorca, nie przechowujemy dokumentacji sprzedażowej ani podatkowej sprzedawcy.",
+        "plain": "Dane z newslettera usuwamy, gdy się wypiszesz. Nie trzymamy 5-letniej dokumentacji sprzedaży, bo sami nie sprzedajemy."
       },
       "rights": {
         "title": "5. Twoje Prawa (RODO)",

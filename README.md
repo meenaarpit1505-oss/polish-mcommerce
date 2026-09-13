@@ -1,4 +1,6 @@
-# Dream E-commerce
+# VistulaVogue (polish-mcommerce)
+
+Independent publisher site recommending Nutriprofits partner products. Purchases complete on the partner store — this app does not collect card payments.
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
@@ -31,11 +33,23 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## MyLead Affiliate & Supabase Lead Integration
+## Nutriprofits Affiliate & Supabase Lead Integration
 
-Your website is pre-engineered to capture leads from both the **Skin Diagnostic Quiz** and the **Free Gift / Lead Magnet Drawer**, automatically routing relevant customers to your **MyLead** and **Nutriprofits** campaigns.
+The **Skin Diagnostic Quiz** and lead-magnet drawer capture emails and route visitors to real Nutriprofits `nplink.net` campaigns. Code defaults in `src/lib/affiliateRouter.ts` match `.env.example`, so quiz/CTA clicks work even before Vercel env is set.
 
-To enable this integrations in a hosted production environment, follow the steps below:
+**Affiliate link mapping** (product SKUs have no per-item affiliate fields today):
+
+| Env var | Default nplink | Used for |
+| --- | --- | --- |
+| `NEXT_PUBLIC_NUTRIPROFITS_LINK` | `https://nplink.net/zj0o7ps8` | Unanswered quiz / primary CTA fallback |
+| `NEXT_PUBLIC_MYLEAD_LINK` | `https://nplink.net/rsmetkhe` | Quiz skin-type fallback: mixed (`mieszana`) |
+| `NEXT_PUBLIC_OFFER_ANTI_AGE` | `https://nplink.net/68rypowt` | Quiz goal: anti-age |
+| `NEXT_PUBLIC_OFFER_ACNE_OILY` | `https://nplink.net/inmfcwwk` | Quiz goal: acne; oily skin (`tlusta`) |
+| `NEXT_PUBLIC_OFFER_HYDRATION` | `https://nplink.net/5py84cbz` | Quiz goal: hydration; dry skin (`sucha`) |
+
+Publisher contact: `meenaarpit907@gmail.com`. Site URL: `https://polish-mcommerce.vercel.app`.
+
+To enable lead storage in a hosted production environment, follow the steps below:
 
 ### 1. Database Setup (Supabase)
 
@@ -53,9 +67,10 @@ You must set your production environment keys in your hosting provider's dashboa
 1. Refer to `.env.example` in the root of this project for all required variables.
 2. Under **Project Settings -> Environment Variables**, add each of the keys listed in `.env.example` with your real campaign URLs and API credentials.
 3. Specifically, configure:
-   - `NEXT_PUBLIC_MYLEAD_LINK` - Your general MyLead partner link.
-   - `NEXT_PUBLIC_OFFER_ACNE_OILY` - Your specific MyLead campaign link for acne/oily skin results.
-   - `NEXT_PUBLIC_SUPABASE_URL` & `NEXT_PUBLIC_SUPABASE_ANON_KEY` - To link your database.
+   - The five `NEXT_PUBLIC_*` affiliate keys listed above (optional if you accept the code defaults).
+   - `NEXT_PUBLIC_SITE_URL=https://polish-mcommerce.vercel.app`
+   - `NEXT_PUBLIC_SUPABASE_URL` & `NEXT_PUBLIC_SUPABASE_ANON_KEY` — to link your database.
+   - Keep `NEXT_PUBLIC_PAYMENTS_ENABLED=false` until a licensed gateway is wired.
 
 ### 3. Upload Your Freebie Guide
 
