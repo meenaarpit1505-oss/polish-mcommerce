@@ -57,54 +57,55 @@
   "legal": {
     "terms": "Terms & Conditions",
     "privacy": "Privacy Policy",
-    "termsTitle": "Store Terms & Conditions",
+    "termsTitle": "Website Terms",
     "privacyTitle": "Privacy Policy",
-    "lastUpdated": "Last updated: August 25, 2026",
-    "introText": "Please read our Terms and Conditions carefully. Below is a side-by-side breakdown of our legal terms and what they actually mean in plain, human-friendly English.",
+    "lastUpdated": "Last updated: September 13, 2026",
+    "contactEmail": "meenaarpit907@gmail.com",
+    "introText": "Please read the VistulaVogue website terms carefully. Below is a side-by-side breakdown of the terms — including the affiliate recommendation model — and what they actually mean in plain, human-friendly English.",
     "privacyIntroText": "We value your privacy and trust above all. Below is a side-by-side breakdown of our Privacy Policy (RODO/GDPR compliant) and what it actually means for your data in plain, human-friendly English.",
     "stubMessage": "Full document content will be published soon in compliance with UOKiK requirements.",
     "sections": {
       "merchant": {
-        "title": "1. Merchant Information",
-        "legal": "This online store operating at Dream-website is run by Dream Corp Sp. z o.o., located at ul. Wiejska 12, 00-902 Warszawa, NIP: 1234567890, REGON: 123456789. Email contact: support@dreamwebsite.pl.",
-        "plain": "This is us! We run this store. We are a registered business in Poland and you can contact us anytime at our official email."
+        "title": "1. Publisher Identity",
+        "legal": "The VistulaVogue website at https://polish-mcommerce.vercel.app is operated by an independent website publisher/developer of VistulaVogue (a natural person, not a limited-liability company). The publisher is not a Polish seller and has no seller NIP. The site recommends Nutriprofits partner products; purchases and payment are completed on the partner store, not on this website. Email contact: meenaarpit907@gmail.com.",
+        "plain": "This is not a Sp. z o.o. store. An independent publisher runs the site and recommends Nutriprofits partner products — you pay and receive delivery from the partner store. Write to meenaarpit907@gmail.com."
       },
       "payments": {
-        "title": "2. Orders & Payments",
-        "legal": "All prices listed on the Website are gross prices including VAT. Payments can be made via credit card, BLIK, or bank transfer. Orders are processed immediately upon confirmation of successful transaction payment routing.",
-        "plain": "Prices shown include tax. You can pay securely with card, BLIK, or transfer. We start packing your order as soon as payment is confirmed."
+        "title": "2. Recommendations & Partner Purchases",
+        "legal": "VistulaVogue does not sell as a Polish trader and does not collect card, BLIK, or bank-transfer payments on this website. Product links may be Nutriprofits affiliate links. Prices, payment methods, delivery, and the sales contract are set by the partner store where the purchase is completed.",
+        "plain": "We do not sell products on this site and we do not collect card numbers. Clicking a recommendation takes you to the partner store, where you buy."
       },
       "returns": {
-        "title": "3. 14-Day Returns & Withdrawal",
-        "legal": "In accordance with Polish consumer protection law, the buyer has the statutory right to withdraw from the sales agreement without giving any reason within 14 calendar days from receiving the merchandise. The cost of return shipping is borne by the consumer.",
-        "plain": "Don't like what you bought? No worries! You have 14 days to return it for a full refund. You will only have to pay for shipping the item back to us."
+        "title": "3. Returns & Withdrawal",
+        "legal": "Because the sales contract is formed with the partner store, withdrawal, returns, and refunds are governed by the partner’s terms and applicable consumer-protection law. The VistulaVogue publisher is not a party to the sales contract for recommended products.",
+        "plain": "Returns and withdrawal are handled with the partner store you bought from — not with this website."
       },
       "complaints": {
-        "title": "4. Complaints & Warranty",
-        "legal": "The Seller is liable under statutory warranty (rękojmia) if the product is defective. Complaints can be filed via email or registered mail. The Seller will address complaints and communicate a resolution within 14 days of receipt.",
-        "plain": "If your item arrives damaged or breaks due to a manufacturing defect, let us know. We respect your consumer warranty rights and will resolve your complaint within 14 days."
+        "title": "4. Complaints & Contact",
+        "legal": "Complaints about purchased products should be directed to the seller on the partner store, under that store’s terms. Questions about the VistulaVogue website, recommendations, or personal data: meenaarpit907@gmail.com.",
+        "plain": "Product issue? Contact the partner store. Questions about this site — meenaarpit907@gmail.com."
       }
     },
     "privacySections": {
       "controller": {
         "title": "1. Data Controller",
-        "legal": "The Data Controller of your personal data is Dream Corp Sp. z o.o., located at ul. Wiejska 12, 00-902 Warszawa, NIP: 1234567890, REGON: 123456789. You can contact us regarding data protection at support@dreamwebsite.pl.",
-        "plain": "We are the controllers of your data. If you have any privacy questions or requests, send us an email!"
+        "legal": "The controller of personal data processed in connection with the VistulaVogue website (https://polish-mcommerce.vercel.app) is the independent website publisher/developer of VistulaVogue (a natural person, not a limited-liability company). The publisher is not a Polish seller and has no seller NIP. For data-protection matters: meenaarpit907@gmail.com.",
+        "plain": "An independent publisher — not a Sp. z o.o. — looks after data collected on this site. Privacy questions: meenaarpit907@gmail.com."
       },
       "purpose": {
         "title": "2. Why We Collect Data",
-        "legal": "Personal data is processed in accordance with GDPR (RODO) for: processing orders and sales agreements (Art. 6(1)(b)), customer support (Art. 6(1)(f)), marketing and newsletter communications based on your consent (Art. 6(1)(a)), and compliance with tax/accounting laws (Art. 6(1)(c)).",
-        "plain": "We only collect data to ship your orders, support you with purchases, pay taxes, and send newsletters (but only if you explicitly sign up)."
+        "legal": "Personal data (in particular email addresses) is processed in accordance with GDPR (RODO) for: the skin quiz and educational materials (Art. 6(1)(b) or (f)), site-related contact (Art. 6(1)(f)), marketing and newsletter communications only with your consent (Art. 6(1)(a)), and keeping the website secure and operational. This website does not process data to perform its own sales contracts or seller tax/accounting duties, because it does not sell products as a Polish trader.",
+        "plain": "We mainly collect data to send your quiz report, answer messages, and — only if you opt in — a newsletter. We do not collect data in order to sell you a product on this site."
       },
       "sharing": {
         "title": "3. Data Sharing & Recipients",
-        "legal": "To deliver your orders and handle transactions, your data may be shared with trusted partners: courier/delivery firms (e.g., InPost, DHL), payment gateways (e.g., PayU, BLIK, Stripe), and our secure hosting and technical services providers.",
-        "plain": "We never sell your data. We only share the necessary details with companies that help deliver your packages (like InPost) or process your secure payments."
+        "legal": "Data may be processed by hosting and technical infrastructure providers (including Vercel) to operate the website. If you continue to a Nutriprofits partner store, further purchase data is processed by that partner under its own terms. We do not sell your data. This website does not share data with couriers or payment gateways, because it does not complete its own sales.",
+        "plain": "We never sell your data. Hosting keeps the site online. When you buy from a partner, that partner processes the order data."
       },
       "retention": {
         "title": "4. Data Retention Period",
-        "legal": "We store your personal data for the duration required to fulfill the sales agreement, resolve claims, and satisfy Polish tax/accounting retention laws (typically 5 years from the end of the tax year). Marketing data is stored until you withdraw your consent.",
-        "plain": "We keep your order info as long as required by Polish tax laws (usually 5 years). Marketing data is instantly deleted if you unsubscribe."
+        "legal": "Data related to operating the website (for example quiz or newsletter records) is stored for as long as needed for the stated purpose or until you withdraw consent. Marketing data is deleted when consent is withdrawn. Because the publisher does not sell as a Polish trader, we do not keep seller sales or tax archives.",
+        "plain": "Newsletter data is deleted when you unsubscribe. We do not keep 5-year sales tax files, because we are not the seller."
       },
       "rights": {
         "title": "5. Your Rights (RODO/GDPR)",

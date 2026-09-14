@@ -22,6 +22,15 @@ export async function LegalStrip() {
         >
           {t("privacy")}
         </Link>
+        <span className="hidden text-muted/40 sm:inline" aria-hidden="true">
+          |
+        </span>
+        <a
+          href={`mailto:${t("contactEmail")}`}
+          className="text-sm text-muted transition-colors hover:text-primary"
+        >
+          {t("contactEmail")}
+        </a>
       </div>
     </footer>
   );
