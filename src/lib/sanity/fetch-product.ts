@@ -2,6 +2,12 @@ import type { Product, ProductDetail } from "@/lib/types";
 import type { Locale } from "@/i18n/routing";
 import { isSanityConfigured, sanityClient } from "./client";
 import { getMockHomeData } from "./mock-data";
+import {
+  getCatalogAffiliateUrl,
+  getCatalogProductDetail,
+  getCatalogProducts,
+  isCatalogSlug,
+} from "@/lib/catalog";
 import groq from "groq";
 
 export const productBySlugQuery = groq`
@@ -144,7 +150,7 @@ export function enrichProductWithDetails(product: any, locale: string): ProductD
   };
 
   const productDetails = detailedFields[product.slug] || {
-    images: [product.image],
+    images: product.images?.length ? product.images : [product.image],
     description: isEn 
       ? `High quality ${product.title}. Made from durable premium materials. Perfect addition to your daily lifestyle with top-tier aesthetics.`
       : `Wysokiej jakości ${product.title}. Wykonany z trwałych materiałów najwyższej klasy. Doskonały dodatek do codziennego życia o wyjątkowej estetyce.`,
@@ -165,6 +171,7 @@ export function enrichProductWithDetails(product: any, locale: string): ProductD
 
   return {
     ...product,
+    affiliateUrl: product.affiliateUrl || getCatalogAffiliateUrl(product.slug),
     images: productDetails.images || [product.image],
     description: productDetails.description,
     lowestPrice30DaysPLN: productDetails.lowestPrice30DaysPLN!,
@@ -193,6 +200,11 @@ export function enrichProductWithDetails(product: any, locale: string): ProductD
 }
 
 export async function fetchProductBySlug(slug: string, locale: string): Promise<ProductDetail | null> {
+  const catalogProduct = getCatalogProductDetail(slug, locale);
+  if (catalogProduct) {
+    return catalogProduct;
+  }
+
   // If Sanity is configured and client exists, try to query Sanity
   if (isSanityConfigured && sanityClient) {
     try {
@@ -243,6 +255,15 @@ export async function fetchSuggestedProducts(
   category: string,
   locale: string
 ): Promise<Product[]> {
+  const catalogSuggestions = getCatalogProducts(locale as Locale).filter(
+    (product) => product.slug !== currentSlug
+  );
+
+  if (isCatalogSlug(currentSlug) || catalogSuggestions.length >= 3) {
+    const related = catalogSuggestions.filter((product) => product.category === category);
+    const rest = catalogSuggestions.filter((product) => product.category !== category);
+    return [...related, ...rest].slice(0, 4);
+  }
   if (isSanityConfigured && sanityClient) {
     try {
       const related = await sanityClient.fetch<Product[]>(suggestedProductsQuery, {

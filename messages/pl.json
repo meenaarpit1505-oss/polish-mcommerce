@@ -20,13 +20,13 @@
     "currency": "Waluta"
   },
   "hero": {
-    "disclosureHint": "Stuknij, aby zobaczyć więcej szczegółów oferty",
+    "disclosureHint": "Rekomendacje afiliacyjne — zakup w sklepie partnera",
     "quizCta": "Darmowy Audyt Skóry"
   },
   "trust": {
     "inpost": "Dostawa do Paczkomatu InPost",
-    "blik": "Płatność BLIK",
-    "freeDelivery": "Darmowa dostawa od 199 zł"
+    "partner": "Zakup w sklepie partnera",
+    "freeDelivery": "Dostawa według warunków partnera"
   },
   "categories": {
     "title": "Popularne kategorie",
@@ -61,6 +61,7 @@
     "privacyTitle": "Polityka Prywatności",
     "lastUpdated": "Ostatnia aktualizacja: 13 września 2026",
     "contactEmail": "meenaarpit907@gmail.com",
+    "affiliateDisclosure": "Linki partnerskie Nutriprofits (nplink.net). Zakup i płatność odbywają się w sklepie partnera — nie na VistulaVogue.",
     "introText": "Prosimy o uważne zapoznanie się z regulaminem serwisu VistulaVogue. Poniżej znajduje się zestawienie warunków — w tym modelu rekomendacji afiliacyjnych — wraz z przyjaznym dla człowieka podsumowaniem prostym językiem.",
     "privacyIntroText": "Cenimy Twoją prywatność i bezpieczeństwo danych. Poniżej znajduje się zestawienie Polityki Prywatności (zgodnej z RODO) wraz z przyjaznym dla człowieka podsumowaniem prostym językiem.",
     "stubMessage": "Pełna treść dokumentu zostanie opublikowana wkrótce zgodnie z wymogami UOKiK.",

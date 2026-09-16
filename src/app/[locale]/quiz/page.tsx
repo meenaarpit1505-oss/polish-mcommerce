@@ -240,7 +240,7 @@ export default function QuizPage() {
         <div className="flex items-center gap-2">
           <Sparkles className="h-5 w-5 text-primary animate-pulse" />
           <span className="font-black text-lg tracking-tight bg-linear-to-r from-primary to-teal-500 bg-clip-text text-transparent">
-            DermAudit
+            VistulaVogue
           </span>
         </div>
         <Link
@@ -534,7 +534,7 @@ export default function QuizPage() {
 
       {/* QUIZ FOOTER */}
       <footer className="px-4 py-5 border-t border-slate-200/50 dark:border-slate-900/50 text-center text-[10px] text-slate-400 font-medium z-10 bg-white/30 dark:bg-slate-950/30 backdrop-blur-sm">
-        <p>© {new Date().getFullYear()} DermAudit. Wszelkie prawa zastrzeżone.</p>
+        <p>© {new Date().getFullYear()} VistulaVogue. {locale === "pl" ? "Rekomendacje afiliacyjne Nutriprofits." : "Nutriprofits affiliate recommendations."}</p>
         <div className="mt-1 flex items-center justify-center gap-3">
           <Link href="/polityka-prywatnosci" target="_blank" className="hover:text-primary hover:underline">
             Polityka Prywatności (RODO)

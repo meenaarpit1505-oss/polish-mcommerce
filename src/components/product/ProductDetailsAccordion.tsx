@@ -30,16 +30,16 @@ export function ProductDetailsAccordion({ product }: { product: ProductDetail })
       title: locale === "pl" ? "Wysyłka i płatności" : "Shipping & Payments",
       icon: Truck,
       text: locale === "pl" 
-        ? "Wszystkie zamówienia wysyłamy w ciągu 24h. Oferujemy dostawę do Paczkomatów InPost, kurierem DHL oraz punkty odbioru Żabka. Bezpieczne płatności BLIK, Google Pay i kartą płatniczą Visa/Mastercard (szybkie przelewy Przelewy24 już wkrótce!)."
-        : "All orders are dispatched within 24 hours. We offer delivery via InPost, DHL, and local pickup points. Secure payments via card (Visa/Mastercard), Google Pay, and BLIK (Przelewy24 bank transfers coming soon!)."
+        ? "Zakup i płatność odbywają się w sklepie partnera Nutriprofits. Dostawa (w tym InPost) oraz metody płatności są ustalane przez partnera. Ta strona nie przyjmuje BLIK-a, karty ani przelewu."
+        : "Purchase and payment are completed on the Nutriprofits partner store. Delivery (including InPost) and payment methods are set by the partner. This site does not accept BLIK, cards, or bank transfers."
     },
     {
       id: "warranty",
       title: locale === "pl" ? "Zwroty i reklamacje" : "Returns & Guarantees",
       icon: ShieldAlert,
       text: locale === "pl"
-        ? "Masz prawo do bezproblemowego zwrotu towaru w ciągu 14 dni od otrzymania paczki bez podawania przyczyny. Reklamacje rozpatrujemy w ciągu 48h. Kupuj bez obaw!"
-        : "You have the right to a hassle-free return within 14 days of receiving your package, with no questions asked. We resolve warranty issues within 48 hours."
+        ? "Prawo odstąpienia, zwroty i reklamacje reguluje sklep partnera, u którego finalizujesz zakup. VistulaVogue nie jest stroną umowy sprzedaży."
+        : "Withdrawal, returns, and complaints are governed by the partner store where you complete the purchase. VistulaVogue is not a party to the sales contract."
     }
   ];
 

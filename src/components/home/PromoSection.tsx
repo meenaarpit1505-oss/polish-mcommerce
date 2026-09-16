@@ -57,9 +57,7 @@ export function PromoSectionBlock({ promo, products, categories }: PromoSectionP
   } else if (activeCategory) {
     displayedProducts = products.filter((p) => p.category.toLowerCase() === activeCategory.toLowerCase());
   } else {
-    displayedProducts = products
-        .filter((p) => p.originalPricePLN || p.stockCount < LOW_STOCK_THRESHOLD)
-        .slice(0, 3);
+    displayedProducts = products.filter((p) => p.isFeatured);
   }
 
   // Find the selected Category object for custom header naming
@@ -145,7 +143,7 @@ export function PromoSectionBlock({ promo, products, categories }: PromoSectionP
             </p>
           </div>
         ) : (
-          <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-3">
+          <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
             {displayedProducts.map((product) => (
               <ProductCard
                 key={product._id}

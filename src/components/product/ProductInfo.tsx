@@ -5,11 +5,12 @@ import Image from "next/image";
 import { Star, Check, ShieldCheck, ShoppingCart } from "lucide-react";
 import { useCurrency } from "@/providers/CurrencyProvider";
 import { formatPrice, getProductPrice, getProductOriginalPrice } from "@/lib/currency";
-import { useLocale, useTranslations } from "next-intl";
+import { useLocale } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
 import { useCart } from "@/providers/CartProvider";
 import type { ProductDetail } from "@/lib/types";
 import { RestockAlert } from "@/components/RestockAlert";
+import { AffiliateBuyButton } from "@/components/product/AffiliateBuyButton";
 
 interface ProductInfoProps {
   product: ProductDetail;
@@ -19,7 +20,6 @@ interface ProductInfoProps {
 export function ProductInfo({ product, reviewsSummary }: ProductInfoProps) {
   const { currency } = useCurrency();
   const locale = useLocale();
-  const t = useTranslations("common");
   const intlLocale = locale === "pl" ? "pl-PL" : "en-GB";
 
   const price = getProductPrice(product, currency);
@@ -139,7 +139,7 @@ export function ProductInfo({ product, reviewsSummary }: ProductInfoProps) {
       </div>
 
       {/* Dynamic Swatches instead of dropdowns */}
-      {product.variants && product.variants.map((v) => {
+      {product.variants && product.variants.length > 0 && product.variants.map((v) => {
         const isColor = v.name.toLowerCase() === "kolor" || v.name.toLowerCase() === "color";
         return (
           <div key={v.name} className="space-y-3">
@@ -215,9 +215,11 @@ export function ProductInfo({ product, reviewsSummary }: ProductInfoProps) {
         </div>
       )}
 
-      {/* High-Contrast Interactive Add to Cart button or Restock Alert */}
+      {/* High-Contrast Interactive Buy CTA — affiliate products go to the partner store */}
       <div className="pt-2">
-        {product.stockCount === 0 ? (
+        {product.affiliateUrl ? (
+          <AffiliateBuyButton href={product.affiliateUrl} locale={locale} />
+        ) : product.stockCount === 0 ? (
           <RestockAlert productSlug={product.slug} productName={product.title} />
         ) : (
           <button
@@ -263,25 +265,23 @@ export function ProductInfo({ product, reviewsSummary }: ProductInfoProps) {
         )}
       </div>
 
-      {/* Trust Badges - InPost and BLIK */}
+      {/* Trust Badges — partner fulfillment, not on-site BLIK */}
       <div className="grid grid-cols-2 gap-3 border-t border-accent/10 pt-5 text-xs text-muted">
         <div className="flex items-center gap-2.5 rounded-2xl border border-accent/5 p-3.5 bg-surface shadow-sm hover:border-primary/10 transition-colors">
           <div className="relative h-8 w-12 shrink-0">
             <Image src="/trust/inpost.svg" alt="InPost Paczkomat" fill className="object-contain" />
           </div>
           <div className="leading-tight">
-            <p className="font-extrabold text-foreground">{locale === "pl" ? "InPost Paczkomat" : "InPost Locker"}</p>
-            <p className="text-[10px] mt-0.5">{locale === "pl" ? "Dostawa jutro u Ciebie" : "Next-day delivery"}</p>
+            <p className="font-extrabold text-foreground">{locale === "pl" ? "Dostawa u partnera" : "Partner delivery"}</p>
+            <p className="text-[10px] mt-0.5">{locale === "pl" ? "InPost i kurier w sklepie partnera" : "InPost and courier on the partner store"}</p>
           </div>
         </div>
 
         <div className="flex items-center gap-2.5 rounded-2xl border border-accent/5 p-3.5 bg-surface shadow-sm hover:border-primary/10 transition-colors">
-          <div className="relative h-8 w-12 shrink-0">
-            <Image src="/trust/blik.svg" alt="Płatność BLIK" fill className="object-contain" />
-          </div>
+          <ShieldCheck className="h-8 w-8 shrink-0 text-primary" />
           <div className="leading-tight">
-            <p className="font-extrabold text-foreground">{locale === "pl" ? "Płatność BLIK" : "BLIK Payment"}</p>
-            <p className="text-[10px] mt-0.5">{locale === "pl" ? "Szybko i bezpiecznie" : "Fast and secure"}</p>
+            <p className="font-extrabold text-foreground">{locale === "pl" ? "Płatność u partnera" : "Pay on partner store"}</p>
+            <p className="text-[10px] mt-0.5">{locale === "pl" ? "Nie zbieramy BLIK-a ani kart" : "We do not collect BLIK or cards"}</p>
           </div>
         </div>
       </div>

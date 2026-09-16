@@ -35,16 +35,27 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 ## Nutriprofits Affiliate & Supabase Lead Integration
 
-The **Skin Diagnostic Quiz** and lead-magnet drawer capture emails and route visitors to real Nutriprofits `nplink.net` campaigns. Code defaults in `src/lib/affiliateRouter.ts` match `.env.example`, so quiz/CTA clicks work even before Vercel env is set.
+The **Skin Diagnostic Quiz**, product pages, and lead-magnet drawer capture emails and route visitors to real Nutriprofits `nplink.net` campaigns. Code defaults in `src/lib/affiliateRouter.ts` and `src/lib/catalog.ts` match `.env.example`, so quiz/CTA clicks work even before Vercel env is set.
 
-**Affiliate link mapping** (product SKUs have no per-item affiliate fields today):
+**Catalog money pages** (always served from code, not Sanity):
+
+| Slug | Product | Default nplink |
+| --- | --- | --- |
+| `/pl/products/shilajit-extreme` | Shilajit Extreme | `https://nplink.net/zj0o7ps8` |
+| `/pl/products/silvets` | Silvets | `https://nplink.net/rsmetkhe` |
+| `/pl/products/eyevita-plus` | Eyevita Plus | `https://nplink.net/68rypowt` |
+| `/pl/products/matcha-extreme` | Matcha Extreme | `https://nplink.net/inmfcwwk` |
+
+SEO: `/sitemap.xml` and `/robots.txt` are App Router metadata routes at the app root (`src/app/sitemap.ts`, `src/app/robots.ts`) — not under `[locale]`. Product PDPs for the four slugs are generated at build time from the in-repo catalog (no Sanity/CMS required).
+
+**Affiliate link mapping** (quiz + product CTAs):
 
 | Env var | Default nplink | Used for |
 | --- | --- | --- |
-| `NEXT_PUBLIC_NUTRIPROFITS_LINK` | `https://nplink.net/zj0o7ps8` | Unanswered quiz / primary CTA fallback |
-| `NEXT_PUBLIC_MYLEAD_LINK` | `https://nplink.net/rsmetkhe` | Quiz skin-type fallback: mixed (`mieszana`) |
-| `NEXT_PUBLIC_OFFER_ANTI_AGE` | `https://nplink.net/68rypowt` | Quiz goal: anti-age |
-| `NEXT_PUBLIC_OFFER_ACNE_OILY` | `https://nplink.net/inmfcwwk` | Quiz goal: acne; oily skin (`tlusta`) |
+| `NEXT_PUBLIC_NUTRIPROFITS_LINK` | `https://nplink.net/zj0o7ps8` | Shilajit Extreme; unanswered quiz / primary CTA fallback |
+| `NEXT_PUBLIC_MYLEAD_LINK` | `https://nplink.net/rsmetkhe` | Silvets; quiz skin-type fallback: mixed (`mieszana`) |
+| `NEXT_PUBLIC_OFFER_ANTI_AGE` | `https://nplink.net/68rypowt` | Eyevita Plus; quiz goal: anti-age |
+| `NEXT_PUBLIC_OFFER_ACNE_OILY` | `https://nplink.net/inmfcwwk` | Matcha Extreme; quiz goal: acne; oily skin (`tlusta`) |
 | `NEXT_PUBLIC_OFFER_HYDRATION` | `https://nplink.net/5py84cbz` | Quiz goal: hydration; dry skin (`sucha`) |
 
 Publisher contact: `meenaarpit907@gmail.com`. Site URL: `https://polish-mcommerce.vercel.app`.

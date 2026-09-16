@@ -20,7 +20,7 @@ import { useCurrency } from "@/providers/CurrencyProvider";
 import { useLocale } from "next-intl";
 import { formatPrice } from "@/lib/currency";
 import { Link, useRouter } from "@/i18n/navigation";
-import { PaymentsUnavailableNotice } from "@/components/checkout/PaymentsUnavailableNotice";
+import { PartnerOffersNotice } from "@/components/checkout/PartnerOffersNotice";
 import { arePaymentsEnabledClient } from "@/lib/payments";
 
 // --- HIGH-CONVERTING POLISH / ENGLISH COPY ---
@@ -482,11 +482,11 @@ export function PaymentStep() {
         <p className="leading-tight text-center sm:text-left">{t.oneStepAway}</p>
       </div>
 
-      {!arePaymentsEnabledClient() && (
+      {!arePaymentsEnabledClient() ? (
         <div className="mb-6">
-          <PaymentsUnavailableNotice locale={locale} />
+          <PartnerOffersNotice />
         </div>
-      )}
+      ) : null}
 
       {/* CORE FORM GRID */}
       <form onSubmit={handlePaymentSubmit} className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
@@ -499,6 +499,8 @@ export function PaymentStep() {
               <p className="text-xs font-semibold text-slate-400 dark:text-slate-500 mt-1">{t.subtitle}</p>
             </div>
 
+            {arePaymentsEnabledClient() ? (
+            <>
             {/* EXPRESS ONE-CLICK CHECKOUT */}
             <div className="space-y-3">
               <h3 className="font-extrabold text-xs uppercase tracking-wider text-slate-400 dark:text-slate-500 flex items-center gap-2">
@@ -803,6 +805,14 @@ export function PaymentStep() {
               </div>
 
             </div>
+            </>
+            ) : (
+              <p className="text-xs font-semibold text-slate-500 leading-relaxed">
+                {locale === "pl"
+                  ? "Formularz BLIK i karty jest ukryty — płatności na tej stronie są wyłączone. Wybierz ofertę partnera powyżej."
+                  : "The BLIK and card form is hidden — on-site payments are off. Choose a partner offer above."}
+              </p>
+            )}
           </div>
 
           {/* BACK TO SHIPPING */}

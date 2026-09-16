@@ -23,6 +23,7 @@ import { useLocale } from "next-intl";
 import { formatPrice } from "@/lib/currency";
 import { Link, useRouter } from "@/i18n/navigation";
 import type { ProductDetail } from "@/lib/types";
+import { arePaymentsEnabledClient } from "@/lib/payments";
 
 // --- TRANSLATIONS DICTIONARY ---
 const translations = {
@@ -52,6 +53,7 @@ const translations = {
     promoCodeError: "Niepoprawny kod",
     vatIncluded: "Ceny zawierają podatek VAT",
     checkoutBtn: "Przejdź do dostawy",
+    partnerOffersBtn: "Zobacz oferty partnera",
     trustTitle: "Bezpieczne zakupy z VistulaVogue",
     inpostLocker: "Paczkomaty InPost",
     blikPayment: "Szybki BLIK",
@@ -86,6 +88,7 @@ const translations = {
     promoCodeError: "Invalid code",
     vatIncluded: "Prices include VAT",
     checkoutBtn: "Proceed to shipping",
+    partnerOffersBtn: "See partner offers",
     trustTitle: "Secure shopping with VistulaVogue",
     inpostLocker: "InPost Locker",
     blikPayment: "Fast BLIK",
@@ -204,6 +207,10 @@ export function ShoppingCart() {
   const amountToFreeShipping = Math.max(0, freeShippingThreshold - discountedSubtotal);
 
   const handleCheckoutClick = () => {
+    if (!arePaymentsEnabledClient()) {
+      router.push("/#produkty");
+      return;
+    }
     router.push("/shipping");
   };
 
@@ -627,7 +634,7 @@ export function ShoppingCart() {
                     {/* Shimmer Effect */}
                     <div className="absolute inset-0 w-1/2 h-full bg-linear-to-r from-transparent via-white/20 to-transparent -skew-x-12 -translate-x-full group-hover:animate-shimmer" />
                     
-                    <span>{t.checkoutBtn}</span>
+                    <span>{arePaymentsEnabledClient() ? t.checkoutBtn : t.partnerOffersBtn}</span>
                     <ArrowRight className="h-4.5 w-4.5 stroke-[2.5px]" />
                   </motion.button>
                 </div>
@@ -638,13 +645,11 @@ export function ShoppingCart() {
                     {t.trustTitle}
                   </p>
                   <div className="grid grid-cols-3 gap-2">
-                    {/* BLIK Badge */}
-                    <div className="flex flex-col items-center justify-center p-2 rounded-xl border border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-950/20 hover:border-pink-500/20 transition-colors group">
-                      <svg className="h-5 w-10 text-[#E3007B] fill-current group-hover:scale-105 transition-transform" viewBox="0 0 100 50">
-                        <text x="50" y="32" fontSize="24" fontWeight="900" textAnchor="middle" fill="#E3007B" letterSpacing="-1">blik</text>
-                      </svg>
+                    {/* Partner store badge — not on-site BLIK */}
+                    <div className="flex flex-col items-center justify-center p-2 rounded-xl border border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-950/20 hover:border-primary/20 transition-colors group">
+                      <span className="text-[11px] font-black text-primary tracking-tight">NP</span>
                       <span className="text-[8px] font-extrabold text-slate-400 dark:text-slate-500 mt-1 text-center leading-none">
-                        {t.blikPayment}
+                        {locale === "pl" ? "Sklep partnera" : "Partner store"}
                       </span>
                     </div>
 
@@ -695,7 +700,7 @@ export function ShoppingCart() {
             onClick={handleCheckoutClick}
             className="flex-1 flex items-center justify-center gap-1.5 rounded-full bg-primary py-3.5 px-6 text-xs font-black text-white shadow-md shadow-primary/20 hover:bg-primaryDark active:scale-95 transition-all cursor-pointer min-h-11"
           >
-            <span>{t.checkoutBtn}</span>
+            <span>{arePaymentsEnabledClient() ? t.checkoutBtn : t.partnerOffersBtn}</span>
             <ArrowRight className="h-4 w-4 stroke-[2.5px]" />
           </button>
         </div>

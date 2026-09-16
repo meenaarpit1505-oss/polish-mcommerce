@@ -32,6 +32,8 @@ export interface Product {
   category: string;
   stockCount: number;
   isFeatured: boolean;
+  /** Nutriprofits nplink — purchases complete on the partner store. */
+  affiliateUrl?: string;
 }
 
 export interface ProductVariant {

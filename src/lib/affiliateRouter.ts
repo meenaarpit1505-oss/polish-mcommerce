@@ -8,8 +8,8 @@ export interface QuizSelection {
  * Each env var below overrides the matching default so Vercel can rotate
  * links without a deploy. Defaults work even when env is not set yet.
  *
- * Product records do not currently carry per-SKU affiliate fields. Quiz
- * offers and these primary CTA fallbacks are the live click surfaces.
+ * Catalog SKUs in src/lib/catalog.ts carry per-product nplinks. Quiz
+ * offers and the primary CTA fallbacks below are additional click surfaces.
  *
  * Mapping:
  * 1. NEXT_PUBLIC_NUTRIPROFITS_LINK → https://nplink.net/zj0o7ps8
@@ -32,22 +32,29 @@ export const DEFAULT_AFFILIATE_LINKS = {
   offerHydration: "https://nplink.net/5py84cbz",
 } as const;
 
+export type AffiliateKey = keyof typeof DEFAULT_AFFILIATE_LINKS;
+
+export function resolveAffiliateUrl(key: AffiliateKey): string {
+  const fromEnv = {
+    nutriprofits: process.env.NEXT_PUBLIC_NUTRIPROFITS_LINK,
+    mylead: process.env.NEXT_PUBLIC_MYLEAD_LINK,
+    offerAntiAge: process.env.NEXT_PUBLIC_OFFER_ANTI_AGE,
+    offerAcneOily: process.env.NEXT_PUBLIC_OFFER_ACNE_OILY,
+    offerHydration: process.env.NEXT_PUBLIC_OFFER_HYDRATION,
+  }[key]?.trim();
+  return fromEnv || DEFAULT_AFFILIATE_LINKS[key];
+}
+
 /**
  * High-conversion affiliate routing utility mapping user quiz answers
  * to targeted partner redirect URLs or custom landing pages.
  */
 export function getAffiliateLink(answers: Partial<QuizSelection>): string {
-  const defaultNutriprofits =
-    process.env.NEXT_PUBLIC_NUTRIPROFITS_LINK || DEFAULT_AFFILIATE_LINKS.nutriprofits;
-  const defaultMylead =
-    process.env.NEXT_PUBLIC_MYLEAD_LINK || DEFAULT_AFFILIATE_LINKS.mylead;
-
-  const offerAntiAge =
-    process.env.NEXT_PUBLIC_OFFER_ANTI_AGE || DEFAULT_AFFILIATE_LINKS.offerAntiAge;
-  const offerAcneOily =
-    process.env.NEXT_PUBLIC_OFFER_ACNE_OILY || DEFAULT_AFFILIATE_LINKS.offerAcneOily;
-  const offerHydration =
-    process.env.NEXT_PUBLIC_OFFER_HYDRATION || DEFAULT_AFFILIATE_LINKS.offerHydration;
+  const defaultNutriprofits = resolveAffiliateUrl("nutriprofits");
+  const defaultMylead = resolveAffiliateUrl("mylead");
+  const offerAntiAge = resolveAffiliateUrl("offerAntiAge");
+  const offerAcneOily = resolveAffiliateUrl("offerAcneOily");
+  const offerHydration = resolveAffiliateUrl("offerHydration");
 
   // 1. Direct goal-based matching
   if (answers.goal === "anti-age") {

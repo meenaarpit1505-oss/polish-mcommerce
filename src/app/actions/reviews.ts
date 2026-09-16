@@ -102,7 +102,7 @@ const defaultMockReviews: Review[] = [
     reviewer_name: "Klient VistulaVogue",
     rating: 5,
     title: "Świetny produkt",
-    comment: "Bardzo wysoka jakość wykonania, szybka wysyłka do Paczkomatu i bezpieczna płatność BLIK. Wszystko przebiegło bezproblemowo.",
+      comment: "Bardzo wysoka jakość wykonania i jasny opis oferty. Zakup oraz płatność odbywają się w sklepie partnera.",
     is_verified_purchase: true,
     created_at: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString(),
   }

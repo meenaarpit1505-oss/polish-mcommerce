@@ -23,7 +23,7 @@ import { Link, useRouter } from "@/i18n/navigation";
 import { GoogleLoginBtn } from "@/components/GoogleLoginBtn";
 import { CheckoutTimer } from "@/components/CheckoutTimer";
 import { RecoveryBanner } from "@/components/checkout/RecoveryBanner";
-import { PaymentsUnavailableNotice } from "@/components/checkout/PaymentsUnavailableNotice";
+import { PartnerOffersNotice } from "@/components/checkout/PartnerOffersNotice";
 import { arePaymentsEnabledClient } from "@/lib/payments";
 import {
   persistCheckoutSession,
@@ -423,7 +423,10 @@ export default function CheckoutPage() {
           <ShoppingBag className="h-8 w-8" />
         </div>
         <h2 className="text-xl font-black text-slate-900 dark:text-white">Twój koszyk jest pusty</h2>
-        <p className="text-xs font-semibold text-slate-400 mt-1 max-w-sm">Dodaj produkty do koszyka, aby przejść do kasy.</p>
+        <p className="text-xs font-semibold text-slate-400 mt-1 max-w-sm">Zakupy finalizujesz w sklepie partnera. Wybierz rekomendację poniżej albo wróć do katalogu.</p>
+        <div className="mt-6 w-full max-w-md text-left">
+          <PartnerOffersNotice />
+        </div>
         <Link href="/" className="mt-6 inline-flex items-center gap-2 bg-primary text-white text-xs font-black px-6 py-3 rounded-full hover:shadow-lg transition-all cursor-pointer">
           Wróć do sklepu
           <ChevronRight className="h-4 w-4" />
@@ -651,13 +654,18 @@ export default function CheckoutPage() {
                 <div>
                   <h2 className="text-lg sm:text-xl font-black tracking-tight flex items-center gap-2">
                     <span className="flex h-7 w-7 items-center justify-center rounded-full bg-primary/10 text-primary text-xs font-black">2</span>
-                    Bezpieczna Płatność SSL
+                    {arePaymentsEnabledClient() ? "Bezpieczna Płatność SSL" : "Zakup u partnera"}
                   </h2>
-                  <p className="text-xs font-semibold text-slate-400 mt-0.5">Twoje transakcje są zaszyfrowane metodą bankową AES-256.</p>
+                  <p className="text-xs font-semibold text-slate-400 mt-0.5">
+                    {arePaymentsEnabledClient()
+                      ? "Twoje transakcje są zaszyfrowane metodą bankową AES-256."
+                      : "Płatność BLIK i kartą odbywa się w sklepie partnera Nutriprofits — nie na tej stronie."}
+                  </p>
                 </div>
 
-                {!arePaymentsEnabledClient() && <PaymentsUnavailableNotice locale={locale} />}
-
+                {!arePaymentsEnabledClient() ? (
+                  <PartnerOffersNotice />
+                ) : (
                 <div className="space-y-4">
                   
                   {/* BLIK PRIORITY OPTION */}
@@ -936,6 +944,7 @@ export default function CheckoutPage() {
                   </div>
 
                 </div>
+                )}
               </div>
 
               {/* BACK TO CART LINK */}

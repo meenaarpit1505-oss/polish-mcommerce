@@ -42,12 +42,11 @@ export function TrustBar() {
       ),
     },
     {
-      id: "blik",
-      label: t("blik"),
+      id: "partner",
+      label: t("partner"),
       icon: (
-        <div className="flex h-10 w-12 shrink-0 items-center justify-center rounded-xl bg-[#E30613] px-1.5 shadow-sm ring-1 ring-rose-500/20">
-          {/* Custom BLIK pill logo design */}
-          <span className="font-extrabold text-white text-xs tracking-tighter lowercase select-none">blik</span>
+        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 border border-primary/25 text-primary shadow-sm">
+          <span className="font-extrabold text-xs tracking-tight select-none">NP</span>
         </div>
       ),
     },
