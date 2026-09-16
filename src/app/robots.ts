@@ -1,3 +1,7 @@
+/**
+ * App Router metadata route. Must live at src/app/robots.ts (app root),
+ * not under [locale]. Next.js registers this as GET /robots.txt.
+ */
 import type { MetadataRoute } from "next";
 import { getSiteUrl } from "@/lib/site";
 

@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { setRequestLocale } from "next-intl/server";
 import { fetchProductBySlug, fetchSuggestedProducts } from "@/lib/sanity/fetch-product";
-import { getProductReviewsSummary } from "@/app/actions/reviews";
+import { getStaticProductReviewsSummary } from "@/lib/product-reviews";
 import { ProductGallery } from "@/components/product/ProductGallery";
 import { ProductInfo } from "@/components/product/ProductInfo";
 import { ProductReviews } from "@/components/product/ProductReviews";
@@ -12,6 +12,7 @@ import { ProductJsonLd } from "@/components/product/ProductJsonLd";
 import { GoBackButton } from "@/components/product/GoBackButton";
 import { ProductCard } from "@/components/product/ProductCard";
 import { CATALOG_SLUGS } from "@/lib/catalog";
+import { routing } from "@/i18n/routing";
 
 interface ProductPageProps {
   params: Promise<{
@@ -20,8 +21,13 @@ interface ProductPageProps {
   }>;
 }
 
+/** Unknown slugs (legacy mock PDP) can still render on demand. */
+export const dynamicParams = true;
+
 export function generateStaticParams() {
-  return CATALOG_SLUGS.map((slug) => ({ slug }));
+  return routing.locales.flatMap((locale) =>
+    CATALOG_SLUGS.map((slug) => ({ locale, slug }))
+  );
 }
 
 // 1. Generate Metadata dynamically for maximum search engine performance (SEO)
@@ -67,14 +73,12 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
     notFound();
   }
 
-  // Fetch reviews and category-based suggestions in parallel
-  const reviewsPromise = getProductReviewsSummary(slug);
-  const suggestedPromise = fetchSuggestedProducts(slug, product.category, locale);
-
-  const [reviewsSummary, suggestedProducts] = await Promise.all([
-    reviewsPromise,
-    suggestedPromise,
-  ]);
+  const reviewsSummary = getStaticProductReviewsSummary(slug);
+  const suggestedProducts = await fetchSuggestedProducts(
+    slug,
+    product.category,
+    locale
+  );
 
   const galleryImages = product.images && product.images.length > 0
     ? product.images

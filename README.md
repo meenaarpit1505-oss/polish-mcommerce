@@ -46,7 +46,7 @@ The **Skin Diagnostic Quiz**, product pages, and lead-magnet drawer capture emai
 | `/pl/products/eyevita-plus` | Eyevita Plus | `https://nplink.net/68rypowt` |
 | `/pl/products/matcha-extreme` | Matcha Extreme | `https://nplink.net/inmfcwwk` |
 
-SEO: `/sitemap.xml` and `/robots.txt` are App Router metadata routes (`src/app/sitemap.ts`, `src/app/robots.ts`).
+SEO: `/sitemap.xml` and `/robots.txt` are App Router metadata routes at the app root (`src/app/sitemap.ts`, `src/app/robots.ts`) — not under `[locale]`. Product PDPs for the four slugs are generated at build time from the in-repo catalog (no Sanity/CMS required).
 
 **Affiliate link mapping** (quiz + product CTAs):
 

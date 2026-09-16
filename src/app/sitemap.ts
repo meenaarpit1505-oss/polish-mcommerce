@@ -1,15 +1,24 @@
+/**
+ * App Router metadata route. Must live at src/app/sitemap.ts (app root),
+ * not under [locale] — otherwise Next emits /pl/sitemap.xml or nothing.
+ * Production commit 89622075 had no such file, so Vercel listed neither
+ * /sitemap.xml nor /robots.txt.
+ */
 import type { MetadataRoute } from "next";
 import { routing } from "@/i18n/routing";
-import { getPathname } from "@/i18n/navigation";
 import { CATALOG_SLUGS } from "@/lib/catalog";
 import { getSiteUrl } from "@/lib/site";
 
 const STATIC_PATHS = [
-  "/",
+  "",
   "/quiz",
   "/regulamin",
   "/polityka-prywatnosci",
 ] as const;
+
+function localePath(locale: string, path: string): string {
+  return `/${locale}${path}`;
+}
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = getSiteUrl();
@@ -17,24 +26,38 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [];
 
   for (const locale of routing.locales) {
-    for (const href of STATIC_PATHS) {
+    for (const path of STATIC_PATHS) {
       entries.push({
-        url: `${base}${getPathname({ locale, href })}`,
+        url: `${base}${localePath(locale, path)}`,
         lastModified,
-        changeFrequency: href === "/" ? "daily" : "weekly",
-        priority: href === "/" ? 1 : 0.8,
+        changeFrequency: path === "" ? "daily" : "weekly",
+        priority: path === "" ? 1 : 0.8,
+        alternates: {
+          languages: Object.fromEntries(
+            routing.locales.map((other) => [
+              other,
+              `${base}${localePath(other, path)}`,
+            ])
+          ),
+        },
       });
     }
 
     for (const slug of CATALOG_SLUGS) {
+      const path = `/products/${slug}`;
       entries.push({
-        url: `${base}${getPathname({
-          locale,
-          href: `/products/${slug}`,
-        })}`,
+        url: `${base}${localePath(locale, path)}`,
         lastModified,
         changeFrequency: "weekly",
         priority: 0.9,
+        alternates: {
+          languages: Object.fromEntries(
+            routing.locales.map((other) => [
+              other,
+              `${base}${localePath(other, path)}`,
+            ])
+          ),
+        },
       });
     }
   }
