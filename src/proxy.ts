@@ -67,5 +67,9 @@ export async function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/", "/(pl|en)/:path*", "/((?!_next|_vercel|studio|auth|api|.*\\..*).*)"],
+  matcher: [
+    "/",
+    "/(pl|en)/:path*",
+    "/((?!_next|_vercel|studio|auth|api|sitemap\\.xml|robots\\.txt|.*\\..*).*)",
+  ],
 };

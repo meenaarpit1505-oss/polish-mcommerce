@@ -1,8 +1,8 @@
 export const brand = {
   name: "VistulaVogue",
   tagline: {
-    pl: "Twój sklep online w Polsce",
-    en: "Your online store in Poland",
+    pl: "Rekomendacje produktów partnerskich w Polsce",
+    en: "Partner product recommendations in Poland",
   },
   colors: {
     primary: "#10B981",

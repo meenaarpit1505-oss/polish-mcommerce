@@ -20,13 +20,13 @@
     "currency": "Currency"
   },
   "hero": {
-    "disclosureHint": "Tap to see more offer details",
+    "disclosureHint": "Affiliate recommendations — purchase on the partner store",
     "quizCta": "Free Skin Audit"
   },
   "trust": {
     "inpost": "InPost Paczkomat delivery",
-    "blik": "BLIK payment",
-    "freeDelivery": "Free delivery from 199 PLN"
+    "partner": "Buy on the partner store",
+    "freeDelivery": "Delivery per partner terms"
   },
   "categories": {
     "title": "Popular categories",
@@ -61,6 +61,7 @@
     "privacyTitle": "Privacy Policy",
     "lastUpdated": "Last updated: September 13, 2026",
     "contactEmail": "meenaarpit907@gmail.com",
+    "affiliateDisclosure": "Nutriprofits partner links (nplink.net). Purchase and payment are completed on the partner store — not on VistulaVogue.",
     "introText": "Please read the VistulaVogue website terms carefully. Below is a side-by-side breakdown of the terms — including the affiliate recommendation model — and what they actually mean in plain, human-friendly English.",
     "privacyIntroText": "We value your privacy and trust above all. Below is a side-by-side breakdown of our Privacy Policy (RODO/GDPR compliant) and what it actually means for your data in plain, human-friendly English.",
     "stubMessage": "Full document content will be published soon in compliance with UOKiK requirements.",

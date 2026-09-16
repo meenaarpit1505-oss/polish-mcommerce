@@ -7,6 +7,11 @@ export async function LegalStrip() {
   return (
     <footer className="border-t border-accent/10 bg-surface py-6">
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-3 px-4 text-center sm:flex-row sm:justify-center sm:gap-6">
+        <p className="w-full text-[11px] font-medium leading-relaxed text-muted sm:w-auto">
+          {t("affiliateDisclosure")}
+        </p>
+      </div>
+      <div className="mx-auto mt-3 flex max-w-6xl flex-col items-center gap-3 px-4 text-center sm:flex-row sm:justify-center sm:gap-6">
         <Link
           href="/regulamin"
           className="text-sm text-muted transition-colors hover:text-primary"

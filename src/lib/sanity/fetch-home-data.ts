@@ -7,10 +7,13 @@ import {
   homePageQuery,
 } from "./queries";
 import { getMockHomeData } from "./mock-data";
+import { mergeWithCatalog } from "@/lib/catalog";
 
 export async function fetchHomeData(locale: Locale): Promise<HomePageData> {
+  const mock = getMockHomeData(locale);
+
   if (!isSanityConfigured || !sanityClient) {
-    return getMockHomeData(locale);
+    return mock;
   }
 
   try {
@@ -23,22 +26,20 @@ export async function fetchHomeData(locale: Locale): Promise<HomePageData> {
     ]);
 
     if (!home?.hero || !home.promo) {
-      return getMockHomeData(locale);
+      return mock;
     }
 
     return {
       hero: home.hero,
-      categories: categories.length > 0 ? categories : getMockHomeData(locale).categories,
-      products: products.length > 0 ? products : getMockHomeData(locale).products,
+      categories: categories.length > 0 ? categories : mock.categories,
+      products: mergeWithCatalog(products ?? [], locale),
       promo: home.promo,
       recentPurchases:
         home.recentPurchases && home.recentPurchases.length > 0
           ? home.recentPurchases
-          : getMockHomeData(locale).recentPurchases,
+          : mock.recentPurchases,
     };
   } catch {
-    return getMockHomeData(locale);
+    return mock;
   }
 }
-
-export const revalidate = 60;

@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Clock, ShieldCheck, Smartphone, Landmark } from "lucide-react";
+import { Clock, ShieldCheck, Smartphone } from "lucide-react";
 import { useSearchParams } from "next/navigation";
 import { Link } from "@/i18n/navigation";
 import { useCartRecoveryStore } from "@/lib/cart-recovery-store";
@@ -114,20 +114,13 @@ export function RecoveryBanner() {
                 </div>
               </div>
               <div className="flex items-center gap-2 shrink-0">
-                <a
-                  href="#platnosc-blik"
+                <Link
+                  href="/#produkty"
                   className="inline-flex items-center gap-1.5 rounded-full bg-rose-600 text-white text-[11px] font-black px-3 py-2 hover:bg-rose-700 transition-colors"
                 >
                   <Smartphone className="h-3.5 w-3.5" />
-                  BLIK
-                </a>
-                <a
-                  href="#platnosc-p24"
-                  className="inline-flex items-center gap-1.5 rounded-full border border-slate-300 dark:border-slate-600 text-slate-800 dark:text-slate-100 text-[11px] font-black px-3 py-2"
-                >
-                  <Landmark className="h-3.5 w-3.5" />
-                  Przelewy24
-                </a>
+                  {session ? "Oferty partnera" : "Oferty"}
+                </Link>
                 <span className="hidden sm:inline-flex items-center gap-1 text-[10px] font-bold text-slate-500">
                   <Clock className="h-3 w-3" />
                   15 min

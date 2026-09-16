@@ -11,13 +11,17 @@ import { MobileStickyCart } from "@/components/product/MobileStickyCart";
 import { ProductJsonLd } from "@/components/product/ProductJsonLd";
 import { GoBackButton } from "@/components/product/GoBackButton";
 import { ProductCard } from "@/components/product/ProductCard";
-import type { Locale } from "@/i18n/routing";
+import { CATALOG_SLUGS } from "@/lib/catalog";
 
 interface ProductPageProps {
   params: Promise<{
     locale: string;
     slug: string;
   }>;
+}
+
+export function generateStaticParams() {
+  return CATALOG_SLUGS.map((slug) => ({ slug }));
 }
 
 // 1. Generate Metadata dynamically for maximum search engine performance (SEO)
